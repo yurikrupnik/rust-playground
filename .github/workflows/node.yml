@@ -178,7 +178,8 @@ jobs:
       - uses: pnpm/action-setup@v2.1.0
         with:
           version: 7.8.0
-          run_install: true
+#          run_install: true
+      - run: pnpm i
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
@@ -232,5 +233,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #      - run: echo finished docker build
-#      - run: yarn docker
+#      - run: pnpm docker
 
