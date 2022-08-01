@@ -1,0 +1,57 @@
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: 'command to run'
+        required: true
+        default: 'build'
+      tags:
+        description: 'Test scenario tags'
+        default: 'latest'
+        required: false
+        options:
+          - prerelease
+          - patch
+          - major
+          - minor
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    #    runs-on: self-hosted
+#    strategy:
+#      matrix:
+#        node-version: [ 16.x ]
+#        go-version: [ 1.18.x ]
+    # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout [main]
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+#          node-version: ${{ matrix.node-version }
+          node-version: 16
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v2.1.0
+        with:
+          version: 7.8.0
+          run_install: true
+      - uses: actions/setup-go@v3
+        with:
+          go-version: 1.18
+#          go-version: ${{ matrix.go-version }
+      - run: go version
+      - run: GOOS=linux GOARCH=amd64 yarn build
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - run: yarn ${{ github.event.inputs.command }}

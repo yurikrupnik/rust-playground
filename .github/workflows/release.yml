@@ -1,0 +1,55 @@
+name: Release
+
+on: release
+#  push:
+#    tags:
+#      - '*'
+#  release
+#    types:
+#      - created
+#      - edited
+#      - prereleased
+#      - published
+#      - released
+#      - deleted
+env:
+  DOCKER_BUILDKIT: 1
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.17'
+      - run: go version
+      - name: Install GoReleaser
+        uses: goreleaser/goreleaser-action@v3
+        with:
+          install-only: true
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Login to DockerHub Registry
+        run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      - name: Dump GitHub context
+        id: github_context_step
+        run: echo '${{ toJSON(github) }}'
+#      - name: Run GoReleaser
+#        run: npx nx run-many --all --parallel --target=goreleaser
+#        uses: goreleaser/goreleaser-action@v3
+#        with:
+#          # either 'goreleaser' (default) or 'goreleaser-pro'
+#          distribution: goreleaser
+#          #          version: latest
+#          args: release --rm-dist -f ./apps/users/api/.goreleaser.yaml
+#        #          args: release --rm-dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - uses: actions/upload-artifact@v3
+#        with:
+#          name: build-artifacts
+#          path: dist/
+

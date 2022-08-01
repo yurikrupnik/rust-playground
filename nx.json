@@ -9,13 +9,15 @@
       "dependencies": "*",
       "devDependencies": "*"
     },
-    ".eslintrc.json": "*"
+    ".eslintrc.json": "*",
+    "go.mod": "*"
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "nx/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "MTNhYmYxMTMtMGUxNS00ZThjLTg5MDgtOWQzNzY3YzdkMDk2fHJlYWQtd3JpdGU="
       }
     }
   },
@@ -24,5 +26,29 @@
       "dependsOn": ["^build"]
     }
   },
-  "defaultProject": "auth-app"
+  "defaultProject": "auth-app",
+  "cli": {
+    "defaultCollection": "@nxext/vite"
+  },
+  "generators": {
+    "@nxext/vite": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "css",
+        "linter": "eslint"
+      }
+    }
+  }
 }

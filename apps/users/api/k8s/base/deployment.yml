@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-api
+  #  namespace: users
+  labels:
+    app: users-api
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: users-api
+      labels:
+        app: users-api
+      annotations:
+        "consul.hashicorp.com/connect-inject": "true"
+        "consul.hashicorp.com/connect-service": "users-api"
+        "consul.hashicorp.com/connect-service-protocol": "http"
+        "consul.hashicorp.com/service-meta-version": "v.1.1"
+        "prometheus.io/scrape": "true"
+        "prometheus.io/port": "9102"
+    spec:
+      containers:
+        - name: users-api
+          #          image: europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-api:latest
+          image: yurikrupnik/users-api:latest
+          imagePullPolicy: IfNotPresent
+          #          command: [ "node", "main.js" ]
+          #            - node
+          #            - main.js
+          env:
+            - name: MONGO_URI
+              value: mongodb+srv://yurikrupnik:T4eXKj1RBI4VnszC@cluster0.rdmew.mongodb.net/
+            #            - name: PROJECT_ID
+            #              value: mussia14
+            #            - name: FIREBASE_DATABASE_URL
+            #              valueFrom:
+            #                secretKeyRef:
+            #                  key: firebase-database-url
+            #                  name: firebase-secret
+            #            - name: FIREBASE_PRIVATE_KEY
+            #              valueFrom:
+            #                secretKeyRef:
+            #                  key: firebase-private-key
+            #                  name: firebase-secret
+            #            - name: FIREBASE_CLIENT_EMAIL
+            #              valueFrom:
+            #                secretKeyRef:
+            #                  key: firebase-client-email
+          #                  name: firebase-secret
+
+
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: users-api

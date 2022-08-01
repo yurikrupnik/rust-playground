@@ -1,0 +1,234 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+#SetNodeAndPnpm: &set-node
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+env:
+  DOCKER_BUILDKIT: 1
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.18.2'
+      - run: go version
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v2.1.0
+        with:
+          version: 7.8.0
+          run_install: true
+      - run: yarn nx affected --target=build --parallel --max-parallel=3 --all --prod
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: dist/
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.18.2'
+      - run: go version
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+#          node-version: ${{ matrix.node-version }}
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v2.1.0
+        with:
+          version: 7.8.0
+          run_install: true
+      - run: yarn nx affected --target=test --parallel --max-parallel=3 --all
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.18.2'
+      - run: go version
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v2.1.0
+        with:
+          version: 7.8.0
+          run_install: true
+      - run: yarn install
+      - run: yarn nx affected --target=lint --parallel --max-parallel=3 --all
+
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.18.2'
+      - run: go version
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v2.1.0
+        with:
+          version: 7.8.0
+          run_install: true
+      - run: yarn nx affected --target=e2e --parallel --max-parallel=3 --all
+  docker:
+    runs-on: ubuntu-latest
+#    needs: build
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.18.2'
+#      - id: go-cache-paths
+#        run: |
+#          echo "::set-output name=go-build::$(go env GOCACHE)"
+#          echo "::set-output name=go-mod::$(go env GOMODCACHE)"
+#
+#      - name: Checkout
+#        uses: actions/checkout@v2
+#
+#      # Cache go build cache, used to speedup go test
+#      - name: Go Build Cache
+#        uses: actions/cache@v2
+#        with:
+#          path: ${{ steps.go-cache-paths.outputs.go-build }}
+#          key: ${{ runner.os }}-go-build-${{ hashFiles('**/go.sum') }}
+#
+#      # Cache go mod cache, used to speedup builds
+#      - name: Go Mod Cache
+#        uses: actions/cache@v2
+#        with:
+#          path: ${{ steps.go-cache-paths.outputs.go-mod }}
+#          key: ${{ runner.os }}-go-mod-${{ hashFiles('**/go.sum') }}
+      - run: go version
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+#      - uses: actions/download-artifact@v3
+#        with:
+#          name: build-artifacts
+#          path: dist
+#      - run: ls dist/**/
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v2.1.0
+        with:
+          version: 7.8.0
+          run_install: true
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+        id: buildx
+#        with:
+#          driver: kubernetes
+      - name: Docker Buildx builders
+        run: docker buildx ls
+#        with:
+#          install: true
+#        with:
+#          driver-opts: |
+#            image=moby/buildkit:master
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}'
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v0'
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+#      - name: Login to DockerHub Registry
+#        run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      - run: |-
+          gcloud --quiet auth configure-docker europe-west1-docker.pkg.dev
+      - run: docker run --privileged --rm tonistiigi/binfmt --install all
+      - run: docker buildx create --use
+      - run: yarn nx affected --target=build --parallel --max-parallel=2 --all
+      - uses: docker/metadata-action@v3
+        id: metadata
+        with:
+          images: ghcr.io/${{ github.repository }}
+#      - name: Kaniko build
+#        uses: aevea/action-kaniko@master
+#        with:
+#          image: yurikrupnik/users-api
+#          username: ${{ secrets.DOCKERHUB_USERNAME }}
+#          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+#          cache: true
+#          cache_registry: aevea/cache
+#          target: go-builder
+#          build-args: DIST_PATH=dist/apps/users/api
+#          push: true
+#          file: Dockerfile
+      - run: yarn nx run-many --target=docker-self --parallel --max-parallel=1 --all
+      - run: yarn nx affected --target=docker-self  --parallel --max-parallel=1 --all
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - run: echo finished docker build
+#      - run: yarn docker
+

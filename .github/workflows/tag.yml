@@ -1,0 +1,102 @@
+name: Tags CI
+
+on:
+  push:
+
+    tags:
+      - '*'
+#  release:
+#    types:
+#      - created
+#      - edited
+#      - prereleased
+#      - published
+#      - released
+#      - deleted
+env:
+  DOCKER_BUILDKIT: 1
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.17'
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Cache pnpm modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v2.1.0
+        with:
+          version: 7.8.0
+          run_install: true
+      - name: Install GoReleaser
+        uses: goreleaser/goreleaser-action@v3
+        with:
+          install-only: true
+      - name: Dump GitHub context
+        id: github_context_step
+        run: echo '${{ toJSON(github) }}'
+#      - name: Get tag
+#        run: echo 'v${{github.ref_name##*-}}'
+#      - name: Set the environment variable
+#        run: echo TAG1=${github.ref_name##*-} >> $GITHUB_ENV
+#      - name: Use the value
+#        run: echo $TAG1 # This will output tag
+#      - name: Get tag
+#        id: tag
+#        uses: dawidd6/action-get-tag@v1
+#        with:
+#          # Optionally strip `v` prefix
+#          strip_v: false
+#      - name: Use tag
+#        run: echo ${{steps.tag.outputs.tag}}##*-
+      - name: Get tag
+        shell: bash
+        run: |
+          chmod +x ./scripts/bash-test.sh
+          ./scripts/bash-test.sh ${{github.ref_name}}
+#          echo ${{ env.TAG }}
+#          echo in github $TAG
+#          echo in github ${TAG}
+#          TAG=v${github.ref_name##*-}
+
+#      - name: Get tag
+#        run: |
+#          TAG=v${{github.ref_name##*-}}
+#          echo v${github.ref_name##*-}
+#          echo $TAG
+#          echo ${TAG}
+#        run: echo ::set-env name=TAG::$(echo ${github.ref_name##*-})
+      - name: Print branch name
+        run: echo 'The branch name is' $TAG
+#      - run: echo '${{ toJSON(github.ref) }}'
+      - run: git status
+      - run: cat scripts/bash-test.sh
+      - name: Login to DockerHub Registry
+        run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+#      - name: Run GoReleaser
+#        run: npx nx run-many --all --parallel --target=goreleaser
+##        with:
+##          # either 'goreleaser' (default) or 'goreleaser-pro'
+##          distribution: goreleaser
+##          #          version: latest
+##          args: release --rm-dist
+#        #          args: release --rm-dist
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          GORELEASER_CURRENT_TAG: ${ TAG }
+#      - uses: actions/upload-artifact@v3
+#        with:
+#          name: build-artifacts
+#          path: dist/
+
