@@ -214,7 +214,6 @@ jobs:
           gcloud --quiet auth configure-docker europe-west1-docker.pkg.dev
       - run: docker run --privileged --rm tonistiigi/binfmt --install all
       - run: docker buildx create --use
-      - run: pnpm nx affected --target=build --parallel --max-parallel=2 --all
       - uses: docker/metadata-action@v3
         id: metadata
         with:
@@ -231,8 +230,9 @@ jobs:
 #          build-args: DIST_PATH=dist/apps/users/api
 #          push: true
 #          file: Dockerfile
-      - run: pnpm nx run-many --target=docker-self --parallel --max-parallel=1 --all
-      - run: pnpm nx affected --target=docker-self  --parallel --max-parallel=1 --all
+#      - run: pnpm nx run-many --target=docker-self --parallel --max-parallel=1 --all
+      - run: pnpm nx affected --target=build --parallel --max-parallel=2 --all
+      - run: pnpm nx affected --target=docker  --parallel --max-parallel=1 --all
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #      - run: echo finished docker build
