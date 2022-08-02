@@ -40,13 +40,13 @@ jobs:
       - run: go version
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
-      - run: yarn nx-cloud start-ci-run
-      - run: yarn nx affected --target=build --parallel --max-parallel=3 --prod
-      - run: yarn nx affected --target=test --parallel --max-parallel=3
-      - run: yarn nx affected --target=lint --parallel --max-parallel=3
-      - run: yarn nx affected --target=e2e --parallel --max-parallel=3
-#      - run: yarn nx affected --target=docker --parallel --max-parallel=3
-      - run: yarn nx-cloud stop-all-agents
+      - run: pnpm nx-cloud start-ci-run
+      - run: pnpm nx affected --target=build --parallel --max-parallel=3 --prod
+      - run: pnpm nx affected --target=test --parallel --max-parallel=3
+      - run: pnpm nx affected --target=lint --parallel --max-parallel=3
+      - run: pnpm nx affected --target=e2e --parallel --max-parallel=3
+#      - run: pnpm nx affected --target=docker --parallel --max-parallel=3
+      - run: pnpm nx-cloud stop-all-agents
   pr:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
