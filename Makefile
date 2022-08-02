@@ -12,7 +12,16 @@ docker-rmi-all: ## Docker remove all images installed - TODO Fix not including
 docker-rm-all: ## Docker remove all images installed - TODO Fix not including
 	docker rm $(docker ps -aq) -f
 ##@ General
-
+build-users-api:
+	docker run \
+          -v $HOME/.config/gcloud:/root/.config/gcloud \
+          -v $PWD/:/workspace \
+          gcr.io/kaniko-project/executor:latest \
+          --dockerfile /workspace/Dockerfile \
+#          --context tar://stdin \
+          --destination "yurikrupnik/users-api" \
+          --build-arg "DIST_PATH=dist/apps/users/api" \
+          --target go-builder
 .PHONY: help
 help: ## Display this help.
 	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n"} /^[a-zA-Z_0-9-]+:.*?##/ { printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
