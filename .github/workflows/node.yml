@@ -231,11 +231,13 @@ jobs:
 #          push: true
 #          file: Dockerfile
 #      - run: pnpm nx run-many --target=docker-self --parallel --max-parallel=1 --all
-      - run: cat .docker/config.json
+#      - run: cat .docker/config.json
       - run: pnpm nx affected --target=build --parallel --max-parallel=2 --all
-      - run: pnpm nx affected --target=docker --parallel --max-parallel=1 --all
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: make build-users-api
+# TODO kaniko build - test here or make it work.
+#      - run: pnpm nx affected --target=docker --parallel --max-parallel=1 --all
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #      - run: echo finished docker build
 #      - run: pnpm docker
 
