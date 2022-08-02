@@ -11,7 +11,7 @@ env:
 jobs:
   main:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'pull_request' }}
+#    if: ${{ github.event_name != 'pull_request' }}
     steps:
       - uses: actions/checkout@v3
         name: Checkout [main]
@@ -46,44 +46,6 @@ jobs:
       - run: pnpm nx affected --target=lint --parallel --max-parallel=3
       - run: pnpm nx affected --target=e2e --parallel --max-parallel=3
 #      - run: pnpm nx affected --target=docker --parallel --max-parallel=3
-      - run: pnpm nx-cloud stop-all-agents
-  pr:
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' }}
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-      - name: Cache pnpm modules
-        uses: actions/cache@v2
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-
-      - uses: pnpm/action-setup@v2.1.0
-        with:
-          version: 7.8.0
-          run_install: true
-      - uses: actions/setup-go@v3
-        with:
-          go-version: '1.18.2'
-          run_install: true
-      - run: go version
-      - run: pnpm nx-cloud start-ci-run
-      - run: pnpm nx affected --target=build --parallel --max-parallel=3 --prod
-      - run: pnpm nx affected --target=test --parallel --max-parallel=3
-      - run: pnpm nx affected --target=lint --parallel --max-parallel=3
-      - run: pnpm nx affected --target=e2e --parallel --max-parallel=3
-#      - run: pnpm nx affected --target=docker --parallel --max-parallel=1
-      #      - run: docker buildx create --use
-      #      - run: pnpm nx affected --target=docker --parallel --max-parallel=3
       - run: pnpm nx-cloud stop-all-agents
   agents:
     runs-on: ubuntu-latest
