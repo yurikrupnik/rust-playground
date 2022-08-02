@@ -8,14 +8,10 @@ export function Index() {
    */
   return (
     <div className={styles.page}>
+      <h1>Welcome</h1>
       <div className="wrapper">
         <div className="container">
-          <div id="welcome">
-            <h1>
-              <span> Hello there, </span>
-              Welcome blog 👋
-            </h1>
-          </div>
+
 
           <div id="hero" className="rounded">
             <div className="text-container">
