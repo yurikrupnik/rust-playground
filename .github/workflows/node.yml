@@ -22,6 +22,7 @@ jobs:
       - uses: actions/setup-go@v3
         with:
           go-version: '1.18.2'
+          run_install: true
       - run: go version
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -54,6 +55,7 @@ jobs:
       - uses: actions/setup-go@v3
         with:
           go-version: '1.18.2'
+
       - run: go version
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
