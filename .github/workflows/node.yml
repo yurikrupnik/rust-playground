@@ -139,6 +139,7 @@ jobs:
       - uses: actions/setup-go@v3
         with:
           go-version: '1.18.2'
+          run_install: true
 #      - id: go-cache-paths
 #        run: |
 #          echo "::set-output name=go-build::$(go env GOCACHE)"
