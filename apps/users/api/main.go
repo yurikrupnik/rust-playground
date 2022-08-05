@@ -7,6 +7,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/monitor"
 	"github.com/gofiber/fiber/v2/middleware/recover"
+	//"github.com/yurikrupnik/nx-go-playground/my-lib"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"log"
 	go_fiber_helpers "rust-playground/libs/go/fiber-helpers"
@@ -22,6 +23,7 @@ type Project struct {
 
 // @securityDefinitions.basic  BasicAuth
 func main() {
+	//my_lib.MyLib()
 	// Connect to the database
 	if err := go_mongodb.Connect(); err != nil {
 		log.Println("failed to connect")

@@ -1,0 +1,10 @@
+namePrefix: staging
+#
+resources:
+  - secrets.yml
+  - deployment.yml
+
+configMapGenerator:
+  - name: config
+    literals:
+      - env=staging

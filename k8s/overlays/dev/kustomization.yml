@@ -1,0 +1,13 @@
+namePrefix: dev
+#
+namespace: dev
+resources:
+  #  - ../../base/
+  - secrets.yml
+configMapGenerator:
+  - name: config
+    literals:
+      - env=dev
+#  - deployment.yml
+#  - servi
+

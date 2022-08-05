@@ -1,0 +1,32 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  #  - secrets.yaml
+  - namespace.yaml
+  #  manual jobs from helm to kubectl thro kustomize
+  #- ../base/../../k8s/base/helm/manifests/
+  #  - ../base/vault/manifests/vault.yaml
+  #  - storage.yaml
+  - ../base/../../apps/users/client/k8s/base
+  - ../base/../../apps/users/api/k8s/base
+  #  - ../base/../../apps/infra/my-kube-controller/k8s/base
+  #  - ../base/../../apps/test/be-test-app/k8s/base
+  #  - ../base/../../apps/profile/client/k8s/base
+  - ../base/../../apps/profile/api/k8s/base
+  - ingress.yaml
+
+#namespace: ng-go-playground
+#  - secrets.yml
+#  - deployment.yml
+#  - ../base
+#  - servi
+
+#namePrefix: demo
+#nameSuffix: yuri
+
+#helmCharts:
+#  - name: cert-manager
+#    repo: https://charts.jetstack.io
+#    version: v1.5.3
+#    releaseName: my-cert-manager
+#    namespace: cert-manager

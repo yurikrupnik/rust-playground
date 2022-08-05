@@ -1,0 +1,81 @@
+#---
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: api
+#  labels:
+#    app: api
+#spec:
+#  replicas: 1
+#  selector:
+#    matchLabels:
+#      app: api
+#  template:
+#    metadata:
+#      labels:
+#        app: api
+#    spec:
+#      #      imagePullSecrets:
+#      #        - name: docker-registry-key
+#      containers:
+#        - name: api
+#          #          image: yurikrupnik/simple-be
+#          image: nginx
+#          #          image: yurikrupnik/api:latest
+#          #          image: europe-west1-docker.pkg.dev/mussia14/images/api:latest
+#          #          image: europe-west1-docker.pkg.dev/mussia14/images/simple-be:latest
+#          #          volumeMounts:
+#          #            - name: google-cloud-keys
+#          #              mountPath: /var/secrets/google
+#          #              readOnly: true
+#          imagePullPolicy: Always
+#          ports:
+#            - containerPort: 80
+#          env:
+#            - name: PROJECT_ID
+#              value: maya-mussia
+#            - name: FIREBASE_DATABASE_URL
+#              valueFrom:
+#                secretKeyRef:
+#                  key: firebase-database-url
+#                  name: firebase-secret
+#            - name: FIREBASE_PRIVATE_KEY
+#              valueFrom:
+#                secretKeyRef:
+#                  key: firebase-private-key
+#                  name: firebase-secret
+#            - name: FIREBASE_CLIENT_EMAIL
+#              valueFrom:
+#                secretKeyRef:
+#                  key: firebase-client-email
+#                  name: firebase-secret
+#            - name: MONGO_URI
+#              value: mongodb+srv://yurikrupnik:T4eXKj1RBI4VnszC@cluster0.rdmew.mongodb.net/
+#            - name: REDIS_URL
+#              value: 10.78.164.219
+#            - name: REDIS_PORT
+#              value: "6379"
+##            - name: HOST
+##              value: localhost
+##            - name: REDIS_URL
+##              value: sda
+#
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: api-service
+#  labels:
+#    run: api-service
+#spec:
+#  type: ClusterIP
+#  ports:
+#    - port: 80
+#      protocol: TCP
+#  #      targetPort: 3333
+#  selector:
+#    app: api
+#
+#
+## colors in xd
+## themes

@@ -12,6 +12,10 @@ docker-rmi-all: ## Docker remove all images installed - TODO Fix not including
 docker-rm-all: ## Docker remove all images installed - TODO Fix not including
 	docker rm $(docker ps -aq) -f
 
+jfrog-set:
+	jf gp default-go 0.0.1 --server-id rt-server
+	jfrog rt go-publish go v0.0.1
+
 set-docker-secrets:
 	echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
 	kubectl create secret docker-registry regcred --docker-server=europe-west1-docker.pkg.dev --docker-username=oauth3accesstoken --docker-password="$(gcloud auth print-access-token)" --docker-email=krupnik.yuri@gmail.com

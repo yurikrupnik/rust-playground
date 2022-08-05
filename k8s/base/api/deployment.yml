@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: be-test-app
+  labels:
+    app: be-test-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: be-test-app
+      labels:
+        app: be-test-app
+    spec:
+      containers:
+        - name: be-test-app
+          image:
+            europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/be-test-app:latest
+          #          image: yurikrupnik/be-test-app:latest
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: be-test-app

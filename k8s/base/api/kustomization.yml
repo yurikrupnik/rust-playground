@@ -1,0 +1,7 @@
+resources:
+  - service.yml
+  - deployment.yml
+#  - servi
+
+#namePrefix: demo
+#nameSuffix: yuri
