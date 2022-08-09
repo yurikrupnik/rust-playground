@@ -3,7 +3,7 @@
   "sourceRoot": "apps/personal/blog-e2e/src",
   "projectType": "application",
   "targets": {
-    "e2e": {
+    "e2ea": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
         "cypressConfig": "apps/personal/blog-e2e/cypress.config.ts",
