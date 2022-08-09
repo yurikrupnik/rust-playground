@@ -1,6 +1,6 @@
 
 # Done!
-FROM node:18-alpine AS nest-builder
+FROM node:18-alpine AS node
 WORKDIR /app
 ARG DIST_PATH
 # RUN test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)
@@ -12,7 +12,7 @@ EXPOSE ${PORT}
 CMD ["node", "main.js"]
 
 # Done
-FROM nginx:alpine AS web-builder
+FROM nginx:alpine AS nginx
 #FROM haproxy:alpine AS web-builder
 WORKDIR /app
 ARG DIST_PATH
@@ -25,7 +25,7 @@ CMD ["nginx", "-g", "daemon off;"]
 #CMD ["haproxy", "start"]
 
 # Done
-FROM scratch AS go-builder
+FROM scratch AS scratch
 WORKDIR /
 ARG DIST_PATH
 #RUN test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)

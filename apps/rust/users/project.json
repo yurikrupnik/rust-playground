@@ -26,6 +26,29 @@
         "failOnWarnings": true,
         "noDeps": true
       }
+    },
+    "dockers": {
+      "executor": "@nx-tools/nx-docker:build",
+      "options": {
+        "push": true,
+        "file": "./Dockerfile",
+        "target": "go-builder",
+        "build-args": ["DIST_PATH=dist/apps/users/api"],
+        "metadata": {
+          "images": [
+            "yurikrupnik/users-api1",
+            "europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-api",
+            "yurikrupnik.jfrog.io/default-docker/users-api"
+          ]
+        }
+      }
+    },
+    "docker": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "docker buildx build --target scratch --platform linux/amd64,linux/arm64 --build-arg DIST_PATH=target/release/users . -t yurikrupnik/rust-users-api -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/rust-users-api --push"
+      }
     }
   },
   "tags": []
