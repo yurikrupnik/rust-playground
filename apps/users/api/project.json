@@ -22,7 +22,7 @@
     "lint": {
       "executor": "@nx-go/nx-go:lint"
     },
-    "docker": {
+    "dockers": {
       "executor": "@nx-tools/nx-docker:build",
       "options": {
         "push": true,
@@ -36,6 +36,13 @@
             "yurikrupnik.jfrog.io/default-docker/users-api"
           ]
         }
+      }
+    },
+    "docker": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "docker buildx build --target go-builder --platform linux/amd64,linux/arm64 --build-arg DIST_PATH=dist/apps/users/api . -t yurikrupnik/users-api -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-api --push"
       }
     }
   },

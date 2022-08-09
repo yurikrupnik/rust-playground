@@ -26,7 +26,7 @@ func main() {
 	//my_lib.MyLib()
 	// Connect to the database
 	if err := go_mongodb.Connect(); err != nil {
-		log.Println("failed to connect")
+		log.Println("failed to connectss")
 		log.Fatal(err)
 	}
 	//if err := go_mongodb.NewDB(); err != nil {
