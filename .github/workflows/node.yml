@@ -232,8 +232,16 @@ jobs:
 #          file: Dockerfile
 #      - run: pnpm nx run-many --target=docker-self --parallel --max-parallel=1 --all
 #      - run: cat .docker/config.json
+      - name: Set outputs
+        id: vars
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      - name: Check outputs
+        run: echo ${{ steps.vars.outputs.sha_short }}
       - run: pnpm nx affected --target=build --parallel --max-parallel=2 --all
-      - run: pnpm nx affected --target=docker --parallel --max-parallel=2 --all
+      - name: Build docker images
+        run: pnpm nx affected --target=docker --parallel --max-parallel=2 --all
+        env:
+          TAG: ${{ steps.vars.outputs.sha_short }}
   datree:
     runs-on: ubuntu-latest
     env:
