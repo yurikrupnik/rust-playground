@@ -48,7 +48,7 @@
       "outputs": [],
       "options": {
         "commands": [
-          "sh scripts/docker.sh"
+          "sh scripts/docker.sh --build-arg DIST_PATH=target/release/users -t yurikrupnik/rust-users-api:\"$TAG\""
         ],
         "forwardAllArgs": true,
         "parallel": false
