@@ -35,7 +35,7 @@ jobs:
           run_install: true
       - uses: actions/setup-go@v3
         with:
-          go-version: '1.18.2'
+          go-version: '1.19'
           run_install: true
       - run: pnpm nx-cloud start-ci-run
       - run: pnpm nx affected --target=build --parallel --max-parallel=3 --prod
