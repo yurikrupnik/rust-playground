@@ -1,4 +1,4 @@
-pub fn mongo_connect() -> String {
+fn mongo_connect() -> String {
     "mongo_connect".into()
 }
 
@@ -13,6 +13,6 @@ mod tests {
     #[test]
     fn it_works() {
         assert_eq!(mongo_connect(), "mongo_connect".to_string());
-        let unwrapped_name =
+        // let unwrapped_name =
     }
 }

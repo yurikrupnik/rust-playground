@@ -13,10 +13,10 @@ import (
 var mongoUrl string = "mongodb+srv://yurikrupnik:T4eXKj1RBI4VnszC@cluster0.rdmew.mongodb.net/"
 
 // todo add back for env vars
-//var mongoUrl = go_myutils.Getenv("MONGO_URI", "mongodb://localhost/mussia12")
+// var mongoUrl = go_myutils.Getenv("MONGO_URI", "mongodb://localhost/mussia12")
 var dbName = go_myutils.Getenv("DB_NAME", "mussia12")
 
-//MongoInstance contains the Mongo client and database objects
+// MongoInstance contains the Mongo client and database objects
 type MongoInstance struct {
 	Client *mongo.Client
 	Db     *mongo.Database
