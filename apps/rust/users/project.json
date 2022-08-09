@@ -14,9 +14,7 @@
         }
       }
     },
-    "serve": {
-
-    },
+    "serve": {},
     "test": {
       "executor": "@nxrs/cargo:test",
       "options": {}

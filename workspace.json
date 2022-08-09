@@ -3,7 +3,6 @@
   "version": 2,
   "projects": {
     "auth-app": "apps/auth-app",
-    "docs": "apps/docs",
     "fiber-he": "libs/fiber-he",
     "go-cli-get-kubeconfig": "apps/go/cli-get-kubeconfig",
     "go-fiber-helpers": "libs/go/fiber-helpers",
