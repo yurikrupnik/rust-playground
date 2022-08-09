@@ -2,9 +2,9 @@ fn mongo_connect() -> String {
     "mongo_connect".into()
 }
 
-fn options() {
-  dbg!(hello(Some("brooks")))
-}
+// fn options() {
+//   dbg!(hello("brooks"))
+// }
 
 #[cfg(test)]
 mod tests {
