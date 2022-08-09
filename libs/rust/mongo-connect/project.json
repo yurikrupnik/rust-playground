@@ -7,7 +7,7 @@
       "executor": "@nxrs/cargo:test",
       "options": {}
     },
-    "lint": {
+    "lints": {
       "executor": "@nxrs/cargo:clippy",
       "options": {
         "fix": false,
