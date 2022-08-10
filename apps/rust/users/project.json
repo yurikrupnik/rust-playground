@@ -14,7 +14,13 @@
         }
       }
     },
-    "serve": {},
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "cargo watch -x run"
+      }
+    },
     "test": {
       "executor": "@nxrs/cargo:test",
       "options": {}

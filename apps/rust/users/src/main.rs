@@ -40,7 +40,7 @@ fn main() {
     println!("Hello, world!");
     println!("Running at url: {}", ECHO_SERVER_ADDRESS);
     let _grade = Some("A+");
-    let grades = vec!["B-", "C+", "D"];
+    let grades = vec!["B+", "C+", "D"];
     // grades.extend(grade);
 
     // let gradess: Vec<Option<&str>> = grades.iter().collect();
