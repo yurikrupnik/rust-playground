@@ -36,9 +36,8 @@
         "build-args": ["DIST_PATH=dist/apps/users/api"],
         "metadata": {
           "images": [
-            "yurikrupnik/users-api1",
-            "europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-api",
-            "yurikrupnik.jfrog.io/default-docker/users-api"
+            "yurikrupnik/users-api",
+            "europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-api"
           ]
         }
       }
@@ -47,11 +46,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
-        "commands": [
-          "sh scripts/docker.sh --build-arg DIST_PATH=target/release/users -t yurikrupnik/rust-users-api"
-        ],
-        "forwardAllArgs": true,
-        "parallel": false
+        "command": "docker buildx build --target scratch --platform linux/amd64,linux/arm64 --build-arg DIST_PATH=target/release/users . -t yurikrupnik/rust-users-api -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/rust-users-api --push"
       }
     }
   },
