@@ -238,7 +238,7 @@ jobs:
       - name: Check outputs
         run: echo ${{ steps.vars.outputs.sha_short }}
       - run: pnpm nx affected --target=build --parallel --max-parallel=4 --all --prod
-      - run: ls -l  target/*
+#      - run: ls -l  target/*
       - name: Build docker images
         run: pnpm nx affected --target=docker --parallel --max-parallel=1 --all
         env:
