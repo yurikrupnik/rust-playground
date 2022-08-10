@@ -239,7 +239,7 @@ jobs:
         run: echo ${{ steps.vars.outputs.sha_short }}
       - run: pnpm nx affected --target=build --parallel --max-parallel=2 --all
       - name: Build docker images
-        run: pnpm nx affected --target=docker --parallel --max-parallel=2 --all
+        run: pnpm nx affected --target=docker --parallel --max-parallel=1 --all
         env:
           TAG: ${{ steps.vars.outputs.sha_short }}
   datree:

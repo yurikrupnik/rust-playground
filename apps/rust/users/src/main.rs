@@ -25,9 +25,18 @@
 //         }
 //     }
 // }
-const ECHO_SERVER_ADDRESS: &str = "localhost:1234";
 
+use mongo_connect::auth_utils::models::Credentials;
+use mongo_connect::authenticate;
+// use super::
+
+const ECHO_SERVER_ADDRESS: &str = "localhost:1234";
 fn main() {
+    let yuri = Credentials {
+        username: "aris".to_string(),
+        password: "123456".to_string(),
+    };
+    authenticate(yuri);
     println!("Hello, world!");
     println!("Running at url: {}", ECHO_SERVER_ADDRESS);
     let _grade = Some("A+");

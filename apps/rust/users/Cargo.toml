@@ -11,3 +11,4 @@ mongodb = "2.3.0"
 serde = "1.0.143"
 tokio = "1.20.1"
 log = "0.4.17"
+mongo_connect = { path = "../../../libs/rust/mongo-connect" }

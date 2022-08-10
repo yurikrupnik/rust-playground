@@ -13,7 +13,7 @@ mod database {
     pub fn get_user() {}
 }
 
-mod auth_utils {
+pub mod auth_utils {
     pub fn login(creds: models::Credentials) {
         crate::database::get_user()
     }
