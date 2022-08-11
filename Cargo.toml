@@ -1,5 +1,7 @@
 [workspace]
 members = [
+    "apps/rust/projects",
+    "libs/rust/cli-test",
     "libs/rust/mongo-connect",
     "apps/rust/users"
 ]
