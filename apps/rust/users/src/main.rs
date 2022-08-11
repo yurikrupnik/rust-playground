@@ -25,7 +25,7 @@
 //         }
 //     }
 // }
-use cli_test::cli_test;
+// use cli_test::cli_test;
 use mongo_connect::auth_utils::models::Credentials;
 use mongo_connect::authenticate;
 // use super::
