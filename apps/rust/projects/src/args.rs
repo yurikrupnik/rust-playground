@@ -1,4 +1,4 @@
-use clap::{Parser, Subcommand};
+use clap::Parser;
 
 /// Simple program to greet a person
 #[derive(Debug, Parser)]
