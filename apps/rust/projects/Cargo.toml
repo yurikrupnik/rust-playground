@@ -19,3 +19,5 @@ serde_json_lodash = "0.1.16"
 ureq = "2.5.0"
 thiserror = "1.0.32"
 dotenv = "0.15.0"
+clap = { version = "3.2.16", features = ["derive"] }
+reqwest = "0.11.11"
