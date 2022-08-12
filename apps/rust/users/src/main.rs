@@ -1,30 +1,7 @@
 // mod mongo-connect;
 // use crate::libs::rust::mongo-connect;
 // use log::{info, warn};
-//
-// struct Yak {
-//     name: String,
-// }
-//
-// fn find_a_razor() {}
-//
-// pub fn shave_the_yak(yak: &mut Yak) {
-//     // info!(target: "yak_events", "Commencing yak shaving for {:?}", yak);
-//     info!(target: "yak_events", "Commencing yak shaving for {:?}", yak.name);
-//
-//     loop {
-//         match find_a_razor() {
-//             Ok(razor) => {
-//                 info!("Razor located: {}", razor);
-//                 yak.shave(razor);
-//                 break;
-//             }
-//             Err(err) => {
-//                 warn!("Unable to locate a razor: {}, retrying", err);
-//             }
-//         }
-//     }
-// }
+
 // use cli_test::cli_test;
 use mongo_connect::auth_utils::models::Credentials;
 use mongo_connect::authenticate;
