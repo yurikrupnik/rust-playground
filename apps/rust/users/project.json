@@ -18,7 +18,8 @@
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
-        "command": "cargo watch -x run"
+        "command": "cargo watch -x doc",
+        "cwd": "apps/rust/users/"
       }
     },
     "test": {

@@ -14,6 +14,22 @@
         }
       }
     },
+    "serves": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "cargo watch -x run",
+        "cwd": "apps/rust/projects/"
+      }
+    },
+    "doc": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "cargo watch -x doc",
+        "cwd": "apps/rust/projects/"
+      }
+    },
     "test": {
       "executor": "@nxrs/cargo:test",
       "options": {}
