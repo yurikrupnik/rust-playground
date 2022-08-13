@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+#metadata:
+#  name: users-client
+spec:
+  selector:
+    matchLabels:
+      app: users-client
+  template:
+    #    metadata:
+    #      labels:
+    #        app: users-client
+    spec:
+      initContainers:
+        - name: init-command
+          image: debian
+          command:
+            - "curl $(MYSQL_SERVICE)"
+
+      containers:
+        - name: users-client
+#          image: gcr.io/google-containers/busybox
+#          resources:
+#            requests:
+#              memory: "32Mi"
+#              cpu: "100m"
+#            limits:
+#              memory: "128Mi"
+#              cpu: "500m"
+#          ports:
+#            - containerPort: 8080

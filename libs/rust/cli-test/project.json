@@ -1,13 +1,13 @@
 {
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "libs/rust/mongo-connect/src",
+  "sourceRoot": "libs/rust/cli-test/src",
   "targets": {
     "test": {
       "executor": "@nxrs/cargo:test",
       "options": {}
     },
-    "lints": {
+    "lint": {
       "executor": "@nxrs/cargo:clippy",
       "options": {
         "fix": false,

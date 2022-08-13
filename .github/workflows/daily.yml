@@ -60,11 +60,11 @@ jobs:
       #      - run: yarn add dotenv
       #      - run: which nx
       - run: npx nx-cloud start-ci-run
-      - run: yarn test
+      - run: pnpm test
       #      - run: yarn nx run-many --target=lint --parallel --max-parallel=4 --all
-      - run: yarn lint
-      - run: yarn build
-      - run: yarn e2e
+      - run: pnpm lint
+      - run: pnpm build
+      - run: pnpm e2e
         #      - run: yarn e2e -- --skip-nx-cache --verbose
       - name: Stop agents
         run: npx nx-cloud stop-all-agents

@@ -16,9 +16,10 @@ import (
 	go_myutils "rust-playground/libs/go/myutils"
 )
 
-type Project struct {
+type Pokemon struct {
 	ID   primitive.ObjectID `json:"id" bson:"_id,omitempty"`
 	Name string             `json:"name" bson:"name,omitempty" validate:"required,min=3,max=36"`
+	Type string             `json:"type" bson:"type,omitempty"`
 }
 
 // @securityDefinitions.basic  BasicAuth
@@ -26,7 +27,7 @@ func main() {
 	//my_lib.MyLib()
 	// Connect to the database
 	if err := go_mongodb.Connect(); err != nil {
-		log.Println("failed to connectss")
+		log.Println("failed to connect")
 		log.Fatal(err)
 	}
 	//if err := go_mongodb.NewDB(); err != nil {
@@ -50,7 +51,7 @@ func main() {
 		return ctx.SendString("dddssszsds")
 	})
 	//go_models_user.CreateFakeGroup[users.User](apiGroup, "users")
-	go_models.CreateFakeGroup[Project](apiGroup, "projects")
+	go_models.CreateFakeGroup[Pokemon](apiGroup, "pokemon")
 
 	app.Get("/dashboard", monitor.New())
 	port := go_myutils.Getenv("PORT", "8080")
