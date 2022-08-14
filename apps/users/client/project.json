@@ -52,7 +52,7 @@
         }
       }
     },
-    "dockerd": {
+    "docker": {
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
