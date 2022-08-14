@@ -41,7 +41,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
-        "command": "docker buildx build --target scratch --platform linux/amd64,linux/arm64 --build-arg DIST_PATH=dist/apps/users/api . -t yurikrupnik/users-api:$TAG -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-api --push"
+        "command": "docker buildx build --target scratch --platform linux/amd64,linux/arm64 --build-arg DIST_PATH=dist/apps/users/api . -t yurikrupnik/users-api -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-api --push"
       }
     }
   },
