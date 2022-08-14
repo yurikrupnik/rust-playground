@@ -37,7 +37,7 @@
         "passWithNoTests": true
       }
     },
-    "docker": {
+    "dockers": {
       "executor": "@nx-tools/nx-docker:build",
       "options": {
         "push": true,
@@ -50,6 +50,13 @@
             "europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-client"
           ]
         }
+      }
+    },
+    "docker": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "docker buildx build --target nginx --platform linux/amd64,linux/arm64 --build-arg DIST_PATH=dist/apps/users/client . -t yurikrupnik/users-client -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-client --push"
       }
     }
   }
