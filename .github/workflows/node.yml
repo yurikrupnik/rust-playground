@@ -260,6 +260,7 @@ jobs:
         run: pnpm nx affected --target=docker --parallel --max-parallel=1 --all
         env:
           TAG: ${{ steps.vars.outputs.sha_short }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   datree:
     runs-on: ubuntu-latest
     env:
