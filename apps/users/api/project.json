@@ -22,7 +22,7 @@
     "lint": {
       "executor": "@nx-go/nx-go:lint"
     },
-    "dockers": {
+    "docker": {
       "executor": "@nx-tools/nx-docker:build",
       "options": {
         "push": true,
@@ -37,7 +37,7 @@
         }
       }
     },
-    "docker": {
+    "dockers": {
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
