@@ -10,6 +10,25 @@ spec:
       "--context=git://github.com/yurikrupnik/nx-go-playground",
       "--destination=yurikrupnik/my-app:0.0.1"
     ]
+    livenessProbe:
+      httpGet:
+        port: 80
+        path: /status
+      initialDelaySeconds: 3
+      periodSeconds: 3
+    readinessProbe:
+      httpGet:
+        port: 80
+        path: /status
+      initialDelaySeconds: 3
+      periodSeconds: 3
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "50m"
+      limits:
+        memory: "256Mi"
+        cpu: "500m"
     volumeMounts:
       - name: kaniko-secret
         mountPath: /kaniko/.docker
