@@ -60,11 +60,11 @@ jobs:
       #      - run: yarn add dotenv
       #      - run: which nx
       - run: npx nx-cloud start-ci-run
-      - run: pnpm test
+      - run: pnpm nx run-many --parallel --max-parallel=2 --all --skip-nx-cache --target=lint
+      - run: pnpm nx run-many --parallel --max-parallel=2 --all --skip-nx-cache --target=test
+      - run: pnpm nx run-many --parallel --max-parallel=2 --all --skip-nx-cache --target=build --prod
+      - run: pnpm nx run-many --parallel --max-parallel=2 --all --skip-nx-cache --target=e2e
       #      - run: yarn nx run-many --target=lint --parallel --max-parallel=4 --all
-      - run: pnpm lint
-      - run: pnpm build
-      - run: pnpm e2e
         #      - run: yarn e2e -- --skip-nx-cache --verbose
       - name: Stop agents
         run: npx nx-cloud stop-all-agents
