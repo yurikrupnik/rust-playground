@@ -21,8 +21,8 @@ specifiers:
   '@nrwl/web': 14.5.1
   '@nrwl/workspace': 14.5.1
   '@nx-go/nx-go': ^2.6.0
-  '@nx-tools/nx-docker': ^3.0.2
-  '@nxext/solid': ^14.0.1
+  '@nx-tools/nx-docker': ^3.0.3
+  '@nxext/solid': ^14.0.2
   '@nxext/vite': ^14.0.2
   '@nxrs/cargo': ^0.3.3
   '@suid/material': ^0.5.0
@@ -65,7 +65,7 @@ specifiers:
   solid-testing-library: ^0.2.1
   ts-jest: 27.1.4
   ts-node: ~10.8.0
-  tsconfig-paths: ^4.0.0
+  tsconfig-paths: '3'
   tslib: ^2.3.0
   typescript: ~4.7.2
   vite: ^2.9.14
@@ -107,8 +107,8 @@ devDependencies:
   '@nrwl/web': 14.5.1_3agzwrx76ke5mvahszh4t4d52y
   '@nrwl/workspace': 14.5.1_p4mi2smrdlimk4bbxlu4b6wavm
   '@nx-go/nx-go': 2.6.0
-  '@nx-tools/nx-docker': 3.0.2_coujtjsxrrulcx5qrdenklfeey
-  '@nxext/solid': 14.0.1_fcf4wjjlvevnwmtapnemhptz6q
+  '@nx-tools/nx-docker': 3.0.3_coujtjsxrrulcx5qrdenklfeey
+  '@nxext/solid': 14.0.2_bhuu7biynwz65wolzqkajrfw6y
   '@nxext/vite': 14.0.2_wuh52gwppyxmho6r2pjrxd55vi
   '@nxrs/cargo': 0.3.3_@nrwl+devkit@14.5.1
   '@testing-library/react': 13.3.0_biqbaboplfbrettd7655fr4n2y
@@ -141,7 +141,7 @@ devDependencies:
   solid-testing-library: 0.2.1_solid-js@1.4.8
   ts-jest: 27.1.4_nhn2p4juyt46b5ejorzojn4inm
   ts-node: 10.8.2_t4lrjbt3sxauai4t5o275zsepa
-  tsconfig-paths: 4.0.0
+  tsconfig-paths: 3.14.1
   typescript: 4.7.4
   vite: 2.9.14
   vite-plugin-eslint: 1.3.0_vite@2.9.14
@@ -2223,6 +2223,18 @@ packages:
       semver: 7.3.4
       tslib: 2.4.0
 
+  /@nrwl/devkit/14.5.2_nx@14.5.1:
+    resolution: {integrity: sha512-li94W0D5SQZ7tjMiq+CZLHTx6/Gos5l3lc6jAzW/FHfoiAaaWN2zOPoydBQY7uw5TC+MH1jBbv/49Nf4wmXGVA==}
+    peerDependencies:
+      nx: '>= 13.10 <= 15'
+    dependencies:
+      ejs: 3.1.8
+      ignore: 5.2.0
+      nx: 14.5.1
+      semver: 7.3.4
+      tslib: 2.4.0
+    dev: true
+
   /@nrwl/eslint-plugin-nx/14.5.1_t7nm3ujhj2elukyzb27ua4peda:
     resolution: {integrity: sha512-o+DCfJM6g0OD1g1Jw9daijcu2va9FZWEdFtndSQRmoRvxaBYMApCVGWIkjHLmgbop34a2VX2I1KiqqKPi3IJdw==}
     peerDependencies:
@@ -2831,8 +2843,8 @@ packages:
     dev: true
     optional: true
 
-  /@nx-tools/nx-docker/3.0.2_coujtjsxrrulcx5qrdenklfeey:
-    resolution: {integrity: sha512-mbTKPQnARK8ftc+whGFkglN2zxLqEXAbzRyFei0uUTandgE82DKSd/ipzdgSIqvYm6CRtQQGVxTNSpbAdmgUlQ==}
+  /@nx-tools/nx-docker/3.0.3_coujtjsxrrulcx5qrdenklfeey:
+    resolution: {integrity: sha512-OoVJgis2216OZ5Co2yeKLD7czlzWTDmZRksaxUS2wjidOx89AOr5EsYRynxAHoELbzNsCW6P+D0bHo+96g+JPQ==}
     engines: {node: '>=14'}
     peerDependencies:
       dotenv: '>=10.0.0'
@@ -2852,22 +2864,22 @@ packages:
       - encoding
     dev: true
 
-  /@nxext/solid/14.0.1_fcf4wjjlvevnwmtapnemhptz6q:
-    resolution: {integrity: sha512-c+EXdESHVuoE8xg0TniKMdX50whCuC8Oe8VFHy7Ln33Dv7nY8H3rPyyt3s78RvchOC3yxW2hvNjFiM/1ypvCMQ==}
+  /@nxext/solid/14.0.2_bhuu7biynwz65wolzqkajrfw6y:
+    resolution: {integrity: sha512-ao+j8Aoec8KT5dVahKRSZRcp5IN1MVPHqHC9XufXaTkS/lrNOWkvk9sagyeFho6TJ9xmg5GKCqfOczw3ewRZlg==}
     peerDependencies:
-      '@nrwl/cypress': ^14.0.3
-      '@nrwl/linter': ^14.0.3
-      '@nrwl/workspace': ^14.0.3
+      '@nrwl/cypress': ^14.5.0
+      '@nrwl/linter': ^14.5.0
+      '@nrwl/workspace': ^14.5.0
       solid-js: ^1.4.1
       tsconfig-paths: ^3.12.0
     dependencies:
       '@nrwl/cypress': 14.5.1_dfadx4jlem4ej3jq2oufjiehha
-      '@nrwl/devkit': 14.5.0_nx@14.5.1
+      '@nrwl/devkit': 14.5.2_nx@14.5.1
       '@nrwl/linter': 14.5.1_hjwsk7t4rtenhyzw3vpfwjmwy4
       '@nrwl/workspace': 14.5.1_p4mi2smrdlimk4bbxlu4b6wavm
-      '@nxext/vite': 14.0.2_wuh52gwppyxmho6r2pjrxd55vi
+      '@nxext/vite': 14.0.3_wuh52gwppyxmho6r2pjrxd55vi
       solid-js: 1.4.8
-      tsconfig-paths: 4.0.0
+      tsconfig-paths: 3.14.1
     transitivePeerDependencies:
       - nx
       - vite
@@ -2877,6 +2889,23 @@ packages:
     resolution: {integrity: sha512-YTUtuvoHPQIRt0WDx5IMTKpWD3HOU+UWR4EuUNbE4J9MGWVY0BS/hS335yfal9H54fsjVmAu9NPGNBOi9sktSQ==}
     peerDependencies:
       '@nrwl/workspace': ^14.0.3
+      vite: ^2.9.14
+    dependencies:
+      '@nrwl/devkit': 14.5.0_nx@14.5.1
+      '@nrwl/workspace': 14.5.1_p4mi2smrdlimk4bbxlu4b6wavm
+      globrex: 0.1.2
+      rxjs: 7.5.6
+      rxjs-for-await: 1.0.0_rxjs@7.5.6
+      tsconfig-paths: 3.14.1
+      vite: 2.9.14
+    transitivePeerDependencies:
+      - nx
+    dev: true
+
+  /@nxext/vite/14.0.3_wuh52gwppyxmho6r2pjrxd55vi:
+    resolution: {integrity: sha512-gTexrtDTHmD1FjN4wwDMmkSFZvUBjTSaeQ0PuI71ugSc2pCHMc269EVbv/pkUeWqfkvevLIicYi521+H2XOm0A==}
+    peerDependencies:
+      '@nrwl/workspace': ^14.5.0
       vite: ^2.9.14
     dependencies:
       '@nrwl/devkit': 14.5.0_nx@14.5.1
@@ -10519,14 +10548,6 @@ packages:
       json5: 1.0.1
       minimist: 1.2.6
       strip-bom: 3.0.0
-
-  /tsconfig-paths/4.0.0:
-    resolution: {integrity: sha512-SLBg2GBKlR6bVtMgJJlud/o3waplKtL7skmLkExomIiaAtLGtVsoXIqP3SYdjbcH9lq/KVv7pMZeCBpLYOit6Q==}
-    dependencies:
-      json5: 2.2.1
-      minimist: 1.2.6
-      strip-bom: 3.0.0
-    dev: true
 
   /tslib/1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
