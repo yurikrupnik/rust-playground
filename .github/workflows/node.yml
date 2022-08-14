@@ -261,6 +261,7 @@ jobs:
         env:
           TAG: ${{ steps.vars.outputs.sha_short }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NX_VERBOSE_LOGGING: true
   datree:
     runs-on: ubuntu-latest
     env:
