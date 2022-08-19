@@ -25,7 +25,7 @@ CMD ["nginx", "-g", "daemon off;"]
 #CMD ["haproxy", "start"]
 
 # Done
-FROM scratch AS scratch
+FROM alpine AS scratch
 WORKDIR /
 ARG DIST_PATH
 #RUN test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)

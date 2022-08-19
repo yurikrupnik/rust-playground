@@ -1,0 +1,9 @@
+docker_build(
+  "yurikrupnik/controller1",
+  ".",
+  #target="go-builder",
+  #build_args={"DIST_PATH":"dist/apps/users/api"},
+  # only=["dist/apps/users/api"]
+)
+
+k8s_yaml(kustomize('k8s/base'))

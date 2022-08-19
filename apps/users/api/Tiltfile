@@ -2,20 +2,20 @@
 local_resource(
   'build-users-api',
   dir="../../..",
-  cmd='yarn nx run users-api:build',
-  deps=['.', '../../../libs/go'],
-  resource_deps=["yarn"],
-  ignore=["k8s"],
+  cmd='pnpm nx run users-api:build',
   env={"GOOS":"linux","GOARCH":"amd64"},
-  labels=["users", "npm"],
+  deps=['.', '../../../libs/go'],
+  resource_deps=["pnpm"],
+  ignore=["k8s"],
+  labels=["users", "pnpm"],
 )
 
-docker_build(
+docker_build_with_restart(
   "yurikrupnik/users-api",
   "../../..",
-  target="go-builder",
+  target="scratch",
   build_args={"DIST_PATH":"dist/apps/users/api"},
-  only=["dist/apps/users/api"]
+  only=["dist/apps/users/api"],
 )
 
 k8s_yaml(kustomize('k8s/base'))

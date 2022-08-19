@@ -1,0 +1,33 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - yuri.dev.yurikrupnik
+  resources:
+  - containerinjectors
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - yuri.dev.yurikrupnik
+  resources:
+  - containerinjectors/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - yuri.dev.yurikrupnik
+  resources:
+  - containerinjectors/status
+  verbs:
+  - get
+  - patch
+  - update

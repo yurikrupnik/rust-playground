@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: controller1
+  #  namespace: users
+  labels:
+    app: controller1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: controller1
+      labels:
+        app: controller1
+      annotations:
+        "consul.hashicorp.com/connect-inject": "true"
+        "consul.hashicorp.com/connect-service": "controller1"
+        "consul.hashicorp.com/connect-service-protocol": "http"
+        "consul.hashicorp.com/service-meta-version": "v.1.1"
+        "prometheus.io/scrape": "true"
+        "prometheus.io/port": "9102"
+    spec:
+      containers:
+        - name: controller1
+          image: yurikrupnik/controller1:latest
+          imagePullPolicy: IfNotPresent
+
+
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: controller1

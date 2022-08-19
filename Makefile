@@ -51,8 +51,13 @@ k-b-d: compile-manifests
 # | kubectl apply -f -
 up:
 	ctlptl create registry ctlptl-registry --port=5005
+	ctlptl create cluster k3d --registry=ctlptl-registry
+	#kubebuilder init --domain dev.yurikrupnik --repo github.com/yurikrupnik/yuri-operator
+	#kubebuilder create api --group yuri --version v1alpha1 --kind ContainerInjector
 
-	-#kind create cluster --name test-env --image kindest/node:v1.21.1 --config local-cluster/cluster.yaml
+	#ctlptl create registry ctlptl-registry --port=5005
+
+	-#kind create cluster --name test-env --image kindest/node:v1.21.1 --config k8s/cluster.yaml
 #	-nvm install node
 #	tilt up
 #	make tilt

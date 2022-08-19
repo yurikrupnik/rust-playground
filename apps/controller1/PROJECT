@@ -1,0 +1,16 @@
+domain: dev.yurikrupnik
+layout:
+- go.kubebuilder.io/v3
+projectName: controller1
+repo: github.com/yurikrupnik/yuri-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: dev.yurikrupnik
+  group: yuri
+  kind: ContainerInjector
+  path: github.com/yurikrupnik/yuri-operator/api/v1alpha1
+  version: v1alpha1
+version: "3"
