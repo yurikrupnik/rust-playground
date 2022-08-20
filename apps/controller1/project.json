@@ -17,7 +17,7 @@
         "main": "apps/controller1/main.go"
       }
     },
-    "test": {
+    "tests": {
       "executor": "@nx-go/nx-go:test"
     },
     "lint": {

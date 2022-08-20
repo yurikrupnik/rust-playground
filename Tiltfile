@@ -2,28 +2,6 @@
 #k8s_yaml(local('helm template --set key1=val1,key2=val2 ./charts/main-chart'))
 #watch_file('/charts/main-chart')
 
-# local_resource(
-#   "make k-b-a",
-#   # cmd="make k-b-a",
-#   cmd="ls",
-#   allow_parallel = True,
-#   trigger_mode=TRIGGER_MODE_MANUAL,
-#   # only=["/k8s/base/helm/values/"],
-#   deps=["/k8s/base/helm/values/"],
-#   labels=["makefile", "helm", "manual"],
-# )
-# local_resource(
-#   "make k-b-d",
-#   cmd="ls",
-#   # cmd="make k-b-d",
-#   allow_parallel = True,
-#   # trigger_mode=TRIGGER_MODE_MANUAL,
-#   # TRIGGER_MODE_AUTO
-#   # only=["/k8s/base/helm/values/"],
-#   deps=["/k8s/base/helm/values/"],
-#   labels=["makefile", "helm", "manual"],
-# )
-
 local_resource('pnpm', cmd='pnpm install', deps=['package.json', 'pnpm-lock.yaml'], labels=['pnpm'])
 
 include('./k8s/base/helm/Tiltfile')
@@ -36,40 +14,21 @@ include('./apps/users/client/Tiltfile')
 
 k8s_yaml(kustomize('k8s/base'))
 
-load('ext://uibutton', 'cmd_button', 'location', 'text_input')
+load('ext://uibutton', 'cmd_button', 'location', 'text_input', 'bool_input')
 
-cmd_button(name='Build',
-           argv=['pnpm', 'nx', 'run-many', '--parallel', '--max-parallel=10', '--all', '--skip-nx-cache', '--target=build'],
-           text='Builder',
-           location=location.NAV,
-           icon_name='waving_hand')
-cmd_button(name='test',
-           argv=['pnpm', 'nx', 'run-many', '--parallel', '--max-parallel=10', '--all', '--skip-nx-cache', '--target=test'],
-           text='Linter',
-           location=location.NAV,
-           icon_name='travel_explore')
-cmd_button(name='Lint',
-           argv=['pnpm', 'nx', 'run-many', '--parallel', '--max-parallel=10', '--all', '--skip-nx-cache', '--target=build'],
-           text='Build',
-           location=location.NAV,
-           icon_name='house')
-# k8s_yaml(kustomize('k8s/base/helm/manifests'))
-# load('ext://uibutton', 'cmd_button', 'location', 'text_input')
-# cmd_button('letters:pnpm install',
-#     argv=['pnpm install'],
-#     resource='dsclient',
-#     icon_name='cloud_download',
-#     text='pnpm install',
-#     requires_confirmation=True
-# )
 
-# cmd_button(name='lint',
-#            resource='frontend',
-#            argv=['yarn', 'run', 'eslint', '.'])
-# k8s_resource("users-api", port_forwards="5001:8080")
-# ports to container port that runs as container env var - both ways
-# k8s_resource("users-api", port_forwards="5001:8080")
-# k8s_resource(workload='users-api', port_forwards="5001:8080")
-
+cmd_button(name='NX',
+        argv=['sh', '-c','pnpm nx $type --parallel --max-parallel=$cores --all $SKIP_CASHE --target=$TARGET'],
+        text='NX',
+        location=location.NAV,
+        requires_confirmation=True,
+        inputs=[
+            text_input('type', placeholder='Enter your nx command type', default="affected"),
+            text_input('TARGET', placeholder='Enter your nx command target', default="test"),
+            bool_input('SKIP_CASHE', true_string='--skip-nx-cache', false_string=''),
+            text_input('cores', placeholder='Enter value or --max-parallel', default="2"),
+        ],
+        icon_name='travel_explore')
+    
 
 # GOOS=linux GOARCH=amd64
