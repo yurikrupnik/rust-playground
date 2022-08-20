@@ -26,7 +26,7 @@
 
 local_resource('pnpm', cmd='pnpm install', deps=['package.json', 'pnpm-lock.yaml'], labels=['pnpm'])
 
-# include('./k8s/base/helm/Tiltfile')
+include('./k8s/base/helm/Tiltfile')
 
 include('./apps/controller1/Tiltfile')
 include('./apps/users/api/Tiltfile')
@@ -35,6 +35,24 @@ include('./apps/users/client/Tiltfile')
 # include('./apps/infra/commdands/Tiltfile')
 
 k8s_yaml(kustomize('k8s/base'))
+
+load('ext://uibutton', 'cmd_button', 'location', 'text_input')
+
+cmd_button(name='Build',
+           argv=['pnpm', 'nx', 'run-many', '--parallel', '--max-parallel=10', '--all', '--skip-nx-cache', '--target=build'],
+           text='Builder',
+           location=location.NAV,
+           icon_name='waving_hand')
+cmd_button(name='test',
+           argv=['pnpm', 'nx', 'run-many', '--parallel', '--max-parallel=10', '--all', '--skip-nx-cache', '--target=test'],
+           text='Linter',
+           location=location.NAV,
+           icon_name='travel_explore')
+cmd_button(name='Lint',
+           argv=['pnpm', 'nx', 'run-many', '--parallel', '--max-parallel=10', '--all', '--skip-nx-cache', '--target=build'],
+           text='Build',
+           location=location.NAV,
+           icon_name='house')
 # k8s_yaml(kustomize('k8s/base/helm/manifests'))
 # load('ext://uibutton', 'cmd_button', 'location', 'text_input')
 # cmd_button('letters:pnpm install',

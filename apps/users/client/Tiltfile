@@ -8,25 +8,25 @@ local_resource(
   labels=["users", "pnpm"],
 )
 
-local_resource(
-  'lint-users-client',
-  dir="../../..",
-  cmd='pnpm nx run users-client:lint',
-  deps=['.'],
-  resource_deps=["pnpm"],
-  ignore=["k8s"],
-  labels=["users", "pnpm"],
-)
+# local_resource(
+#   'lint-users-client',
+#   dir="../../..",
+#   cmd='pnpm nx run users-client:lint',
+#   deps=['.'],
+#   resource_deps=["pnpm"],
+#   ignore=["k8s"],
+#   labels=["users", "pnpm"],
+# )
 
-local_resource(
-  'test-users-client',
-  dir="../../..",
-  cmd='pnpm nx run users-client:test',
-  deps=['.'],
-  resource_deps=["pnpm"],
-  ignore=["k8s"],
-  labels=["users", "pnpm"],
-)
+# local_resource(
+#   'test-users-client',
+#   dir="../../..",
+#   cmd='pnpm nx run users-client:test',
+#   deps=['.'],
+#   resource_deps=["pnpm"],
+#   ignore=["k8s"],
+#   labels=["users", "pnpm"],
+# )
 
 docker_build(
   "yurikrupnik/users-client",
@@ -42,24 +42,31 @@ load('ext://uibutton', 'cmd_button', 'location', 'text_input')
 # k8s_resource('my-resource')
 
 # create a button on resource 'my-resource'
-# cmd_button(name='my-resource-hello-world',
-#            resource='my-resource', 
-#            argv=['echo', 'Hello my-resource!'],
-#            text='Hello World',
-#            icon_name='travel_explore')
+cmd_button(name='Test',
+           resource='users-client', 
+           argv=['pnpm', 'nx', 'run', 'users-client:test'],
+           text='Unit tests',
+           location=location.RESOURCE,
+           icon_name='travel_explore')
 
+cmd_button(name='Lint',
+           resource='users-client', 
+           argv=['pnpm', 'nx', 'run', 'users-client:lint'],
+           text='E2E tests',
+           location=location.RESOURCE,
+           icon_name='waving_hand')
 # create a button in the navbar
 # (logs will go to Tiltfile)
-cmd_button(name='test-users-api',
-           argv=['pnpm', 'nx', 'run', 'users-api:test'],
-           text='Tester',
-           location=location.NAV,
-           icon_name='waving_hand')
-cmd_button(name='lint-users-api',
-           argv=['pnpm', 'nx', 'run', 'users-api:lint'],
-           text='Linter',
-           location=location.NAV,
-           icon_name='travel_explore')
+# cmd_button(name='test-users-api',
+#            argv=['pnpm', 'nx', 'run', 'users-api:test'],
+#            text='Tester',
+#            location=location.NAV,
+#            icon_name='waving_hand')
+# cmd_button(name='lint-users-api',
+#            argv=['pnpm', 'nx', 'run', 'users-api:lint'],
+#            text='Linter',
+#            location=location.NAV,
+#            icon_name='travel_explore')
 
 # # create a button with a text field input
 # cmd_button(name='foo',
