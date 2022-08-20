@@ -35,10 +35,20 @@ spec:
           spec:
             description: ContainerInjectorSpec defines the desired state of ContainerInjector
             properties:
+              alerts:
+                type: boolean
+              alertss:
+                type: boolean
               foo:
                 description: Foo is an example field of ContainerInjector. Edit containerinjector_types.go
                   to remove/update
                 type: string
+              images:
+                items:
+                  type: string
+                type: array
+              prometheus:
+                type: boolean
             type: object
           status:
             description: ContainerInjectorStatus defines the observed state of ContainerInjector

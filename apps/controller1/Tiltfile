@@ -6,4 +6,20 @@ docker_build(
   # only=["dist/apps/users/api"]
 )
 
-k8s_yaml(kustomize('k8s/base'))
+# k8s_yaml(kustomize('k8s/base'))
+
+local_resource(
+  "Install CRDs",
+  cmd="make install",
+  trigger_mode=TRIGGER_MODE_AUTO,
+  labels=["CRDs"],
+  deps=["api/v1alpha1/containerinjector_types.go"],
+)
+
+local_resource(
+  "Uninstall CRDs",
+  cmd="make uninstall",
+  trigger_mode=TRIGGER_MODE_MANUAL,
+  labels=["CRDs"],
+  deps=["api/v1alpha1/containerinjector_types.go"],
+)
