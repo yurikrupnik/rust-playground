@@ -9,7 +9,7 @@ include('./k8s/base/helm/Tiltfile')
 include('./apps/controller1/Tiltfile')
 include('./apps/users/api/Tiltfile')
 include('./apps/users/client/Tiltfile')
-# include('./apps/infra/my-kube-controller/Tiltfile')
+include('./apps/auth-app/Tiltfile')
 # include('./apps/infra/commdands/Tiltfile')
 
 k8s_yaml(kustomize('k8s/base'))
@@ -30,5 +30,11 @@ cmd_button(name='NX',
         ],
         icon_name='travel_explore')
     
-
-# GOOS=linux GOARCH=amd64
+cmd_button(name='Graph',
+        argv=['sh', '-c','pnpm nx $affecteddep-graph'],
+        text='Graph',
+        location=location.NAV,
+        inputs=[
+            bool_input('affected', true_string='affected:', false_string=''),
+        ],
+        icon_name='grain')

@@ -47,8 +47,6 @@ spec:
                 items:
                   type: string
                 type: array
-              prometheus:
-                type: boolean
             type: object
           status:
             description: ContainerInjectorStatus defines the observed state of ContainerInjector
