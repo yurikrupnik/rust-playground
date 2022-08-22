@@ -18,13 +18,11 @@ package controllers
 
 import (
 	"context"
-
+	yuriv1alpha1 "github.com/yurikrupnik/yuri-operator/api/v1alpha1"
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
-
-	yuriv1alpha1 "github.com/yurikrupnik/yuri-operator/api/v1alpha1"
 )
 
 // ContainerInjectorReconciler reconciles a ContainerInjector object
@@ -47,8 +45,19 @@ type ContainerInjectorReconciler struct {
 // For more details, check Reconcile and its Result here:
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.12.2/pkg/reconcile
 func (r *ContainerInjectorReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
+	//ctx := context.Background()
 	_ = log.FromContext(ctx)
-
+	println("Namespace: %s", req.Namespace)
+	println("name %s", req.Name)
+	//println("ctx %s", r.List())
+	//r.Get()
+	//println("NamespacedName %T", req.NamespacedName)
+	//println("name %s", yuriv1alpha1.ContainerInjectorSpec{
+	//	Foo:     "",
+	//	Alerts:  false,
+	//	Alertss: false,
+	//	Images:  nil,
+	//})
 	// TODO(user): your logic here
 
 	return ctrl.Result{}, nil

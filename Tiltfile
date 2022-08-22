@@ -31,10 +31,10 @@ cmd_button(name='NX',
         icon_name='travel_explore')
     
 cmd_button(name='Graph',
-        argv=['sh', '-c','pnpm nx $affecteddep-graph'],
+        argv=['sh', '-c','pnpm nx affected:dep-graph'],
         text='Graph',
         location=location.NAV,
         inputs=[
-            bool_input('affected', true_string='affected:', false_string=''),
+            bool_input('AFFECTED', true_string='affected:', false_string=''),
         ],
         icon_name='grain')

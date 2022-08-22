@@ -1,6 +1,13 @@
 apiVersion: yuri.dev.yurikrupnik/v1alpha1
 kind: ContainerInjector
 metadata:
-  name: containerinjector-sample
+  name: aris-common
+  namespace: aris
+#  labels:
+
 spec:
+  images:
+   - nginx
+   - alpine
+  aros: da
   # TODO(user): Add fields here

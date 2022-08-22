@@ -5,7 +5,7 @@ docker_build(
 )
 
 k8s_yaml(kustomize('config/default'))
-
+k8s_yaml(['config/samples/yuri_v1alpha1_containerinjector.yaml'])
 local_resource(
   "Install CRDs",
   cmd="make install",
