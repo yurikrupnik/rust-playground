@@ -18,6 +18,7 @@ package controllers
 
 import (
 	"context"
+	"github.com/go-logr/logr"
 	yuriv1alpha1 "github.com/yurikrupnik/yuri-operator/api/v1alpha1"
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -28,6 +29,7 @@ import (
 // ContainerInjectorReconciler reconciles a ContainerInjector object
 type ContainerInjectorReconciler struct {
 	client.Client
+	Log    logr.Logger
 	Scheme *runtime.Scheme
 }
 
@@ -45,10 +47,31 @@ type ContainerInjectorReconciler struct {
 // For more details, check Reconcile and its Result here:
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.12.2/pkg/reconcile
 func (r *ContainerInjectorReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
+	var containerInjector yuriv1alpha1.ContainerInjector
 	//ctx := context.Background()
-	_ = log.FromContext(ctx)
-	println("Namespace: %s", req.Namespace)
-	println("name %s", req.Name)
+	l := log.FromContext(ctx)
+	//log := r.Log.WithValues("container-injector", req.NamespacedName)
+	//log.Info("hello from container injector ctrl", "name", req.NamespacedName)
+	ll := l.WithValues("container-injector", req.NamespacedName)
+	//ll.Info("Aris is god \n")
+	//ll.Info("Aris is god1\n")
+	//println("Aris is god3\n")
+	println("Namespace: %s\n", req.Namespace)
+	println("name %s\n", req.Name)
+	println("ctx %s\n", ctx)
+	if err := r.Get(ctx, req.NamespacedName, &containerInjector); err != nil {
+		ll.Info("Error getting object\n", "name", req.NamespacedName)
+		return ctrl.Result{}, client.IgnoreNotFound(err)
+	}
+
+	if err := r.Status().Update(ctx, &containerInjector); err != nil {
+		ll.Info("Error updating status\n", "name", req.NamespacedName)
+		return ctrl.Result{}, client.IgnoreNotFound(err)
+	}
+
+	//if yuriv1alpha1.ContainerInjectorStatus{}
+
+	//if containerInjector
 	//println("ctx %s", r.List())
 	//r.Get()
 	//println("NamespacedName %T", req.NamespacedName)

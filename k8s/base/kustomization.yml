@@ -4,7 +4,7 @@ resources:
   #  - secrets.yaml
   - namespace.yaml
   #  manual jobs from helm to kubectl thro kustomize
-  #- ../base/../../k8s/base/helm/manifests/
+  - ../base/../../k8s/base/kubevela/base
   #  - ../base/vault/manifests/vault.yaml
   #  - storage.yaml
 #  - ../base/../../apps/users/client/k8s/base
@@ -13,7 +13,7 @@ resources:
   #  - ../base/../../apps/test/be-test-app/k8s/base
   #  - ../base/../../apps/profile/client/k8s/base
 #  - ../base/../../apps/profile/api/k8s/base
-  - ingress.yaml
+#  - ingress.yaml
 
 #namespace: ng-go-playground
 #  - secrets.yml

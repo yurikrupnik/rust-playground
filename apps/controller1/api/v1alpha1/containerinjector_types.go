@@ -29,16 +29,17 @@ type ContainerInjectorSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of ContainerInjector. Edit containerinjector_types.go to remove/update
-	Foo     string   `json:"foo,omitempty"`
-	Alerts  bool     `json:"alerts,omitempty"`
-	Alertss bool     `json:"alertss,omitempty"`
-	Images  []string `json:"images,omitempty"`
+	Foo         string   `json:"foo,omitempty"`
+	MachineType string   `json:"machineType,omitempty"`
+	Alerts      bool     `json:"alerts,omitempty"`
+	Images      []string `json:"images,omitempty"`
 }
 
 // ContainerInjectorStatus defines the observed state of ContainerInjector
 type ContainerInjectorStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+	Status string `json:"status,omitempty"`
 }
 
 //+kubebuilder:object:root=true
