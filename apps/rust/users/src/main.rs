@@ -38,7 +38,7 @@ use mongo_connect::authenticate;
 const ECHO_SERVER_ADDRESS: &str = "localhost:1234";
 fn main() {
     let yuri = Credentials {
-        username: "aris".to_string(),
+        username: "arisa".to_string(),
         password: "123456".to_string(),
     };
     authenticate(yuri);
