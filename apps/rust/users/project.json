@@ -39,17 +39,17 @@
       "options": {
         "push": true,
         "file": "./Dockerfile",
-        "target": "go-builder",
-        "build-args": ["DIST_PATH=dist/apps/users/api"],
+        "target": "scratch",
+        "build-args": ["DIST_PATH=dist/apps/rust/users"],
         "metadata": {
           "images": [
-            "yurikrupnik/users-api",
-            "europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-api"
+            "yurikrupnik/users-api-rust",
+            "europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-api-rust"
           ]
         }
       }
     },
-    "dockerd": {
+    "docker": {
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {

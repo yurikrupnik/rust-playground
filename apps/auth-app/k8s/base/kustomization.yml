@@ -1,0 +1,41 @@
+#vars:
+#  - name: MYSQL_SERVICE
+#    objref:
+#      kind: Service
+#      name: mysql
+#      apiVersion: v1
+resources:
+  - service.yml
+  - deployment.yml
+#commonLabels:
+#  demo: profile-client-label
+#  service: users
+#  my-type: client
+#namespace: frontend
+
+#  - servi
+#namePrefix: demo-prefix
+#nameSuffix: client
+#images:
+#  - name: busybox
+#    newName: alpine
+#    newTag: 3.6
+#configMapGenerator:
+#  - name: nginx-configs
+#    files:
+#      - nginx.conf
+#  - name: haproxy-config
+#    files:
+#      - haproxy.cfg
+commonAnnotations:
+  "consul.hashicorp.com/connect-inject": "true"
+  "consul.hashicorp.com/connect-service": "auth-app"
+  "consul.hashicorp.com/connect-service-protocol": "http"
+  "consul.hashicorp.com/service-meta-version": "v.1.1"
+  "prometheus.io/scrape": "true"
+  "prometheus.io/port": "9102"
+
+#labels:
+#  - pairs:
+#      kubernetes.io/metadata.shit: test-aris1
+#      kubernetes.io/metadata.app: Aris22222

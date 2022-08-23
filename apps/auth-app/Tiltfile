@@ -1,0 +1,37 @@
+local_resource(
+  'build-auth-app',
+  dir="../..",
+  cmd='pnpm nx run auth-app:build',
+  deps=['.'],
+  resource_deps=["pnpm"],
+  ignore=["k8s"],
+  labels=["auth", "pnpm"],
+)
+
+docker_build(
+  "yurikrupnik/auth-app",
+  "../..",
+  target="node",
+  build_args={"DIST_PATH":"dist/apps/auth-app"},
+  only=["dist/apps/auth-app"]
+)
+
+load('ext://uibutton', 'cmd_button', 'location', 'text_input')
+
+cmd_button(name='Test',
+           resource='auth-app', 
+           argv=['pnpm', 'nx', 'run', 'auth-app:test'],
+           text='Unit tests',
+           location=location.RESOURCE,
+           icon_name='travel_explore')
+
+cmd_button(name='Lint',
+           resource='auth-app', 
+           argv=['pnpm', 'nx', 'run', 'auth-app:lint'],
+           text='Lint',
+           location=location.RESOURCE,
+           icon_name='waving_hand')
+
+k8s_yaml(kustomize('k8s/base'))
+
+k8s_resource("auth-app", port_forwards="5020:3333")

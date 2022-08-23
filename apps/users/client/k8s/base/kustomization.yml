@@ -5,7 +5,7 @@
 #      name: mysql
 #      apiVersion: v1
 resources:
-  - configMap.yml
+  - configMap.yaml
   - service.yml
   - deployment.yml
 commonLabels:
@@ -38,5 +38,5 @@ commonAnnotations:
 
 labels:
   - pairs:
-      kubernetes.io/metadata.shit: shit-aris
+      kubernetes.io/metadata.shit: test-aris
       kubernetes.io/metadata.app: Aris

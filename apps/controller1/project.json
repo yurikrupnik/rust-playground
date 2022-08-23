@@ -1,0 +1,67 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/controller1",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "make build",
+        "cwd": "apps/controller1"
+      }
+    },
+    "serve": {
+      "executor": "@nx-go/nx-go:serve",
+      "options": {
+        "main": "apps/controller1/main.go"
+      }
+    },
+    "test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "make test",
+        "cwd": "apps/controller1"
+      }
+    },
+    "lint": {
+      "executor": "@nx-go/nx-go:lint"
+    },
+    "dockers": {
+      "executor": "@nx-tools/nx-docker:build",
+      "options": {
+        "push": true,
+        "cwd": ".",
+        "file": "./apps/controller1/Dockerfile",
+        "metadata": {
+          "images": [
+            "yurikrupnik/auth-app",
+            "europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/auth-app"
+          ]
+        }
+      }
+    },
+    "docker": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "docker buildx build --platform linux/amd64,linux/arm64 . -t yurikrupnik/controller1 --push",
+        "cwd": "apps/controller1"
+      }
+    },
+    "docker-make": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "parallel": false,
+        "commands": [
+          "make docker-build",
+          "make docker-push"
+        ],
+        "cwd": "apps/controller1"
+      }
+    }
+  },
+  "tags": []
+}

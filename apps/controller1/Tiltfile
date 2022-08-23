@@ -1,0 +1,24 @@
+docker_build(
+  "yurikrupnik/controller1",
+  ".",
+  only=["controllers", "api", "main.go", "go.mod", "go.sum"],
+)
+
+k8s_yaml(kustomize('config/default'))
+k8s_yaml(['config/samples/yuri_v1alpha1_containerinjector.yaml'])
+local_resource(
+  "Install CRDs",
+  cmd="make install",
+  trigger_mode=TRIGGER_MODE_AUTO,
+  labels=["CRDs"],
+  deps=["api/v1alpha1/containerinjector_types.go"],
+)
+
+local_resource(
+  "Uninstall CRDs",
+  cmd="make uninstall",
+  trigger_mode=TRIGGER_MODE_MANUAL,
+  auto_init=False,
+  labels=["CRDs"],
+  deps=["api/v1alpha1/containerinjector_types.go"],
+)

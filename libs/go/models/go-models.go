@@ -3,12 +3,13 @@ package go_models
 import (
 	"context"
 	"fmt"
-	"github.com/gofiber/fiber/v2"
-	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	"net/http"
 	go_mongodb "rust-playground/libs/go/mongodb"
 	"time"
+
+	"github.com/gofiber/fiber/v2"
+	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 type ApiMethods struct {
@@ -28,13 +29,14 @@ type User struct {
 	//Age    float64 `json:"age"`
 }
 
-func CreateFakeGroup[T interface{}](api fiber.Router, name string) {
+func CreateFakeGroup[T interface{}](api fiber.Router, name string) fiber.Router {
 	router := api.Group(name)
 	router.Post("", CreateHandlerCreate[T]())
 	router.Get("", CreateHandlerList[T]())
 	router.Get("/:id", CreateHandleGetById[T]())
 	router.Delete("/:id", CreateHandleDeleteById[T]())
 	router.Put("/:id", CreateHandleUpdate[T]())
+	return router
 }
 
 func createController[T interface{}](c *fiber.Ctx) error {

@@ -1,0 +1,9 @@
+resources:
+  - service.yml
+  - deployment.yml
+
+#namespace: users
+#  - servi
+
+#namePrefix: demo
+#nameSuffix: api

@@ -2,18 +2,21 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/monitor"
 	"github.com/gofiber/fiber/v2/middleware/recover"
+
 	//"github.com/yurikrupnik/nx-go-playground/my-lib"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	"log"
 	go_fiber_helpers "rust-playground/libs/go/fiber-helpers"
 	go_models "rust-playground/libs/go/models"
 	go_mongodb "rust-playground/libs/go/mongodb"
 	go_myutils "rust-playground/libs/go/myutils"
+
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 type Project struct {
@@ -42,12 +45,15 @@ func main() {
 	//app.Use(csrf.New()) // todo check it - forbidden post events
 	app.Use(cors.New())
 	apiGroup := app.Group("api")
-	apiGroup1 := app.Group("dddsss")
+	apiGroup1 := app.Group("v1")
 	apiGroup1.Get("/aris", func(ctx *fiber.Ctx) error {
-		return ctx.SendString("Nissim")
+		return ctx.SendString("Aros")
 	})
-	apiGroup1.Get("/dom", func(ctx *fiber.Ctx) error {
-		return ctx.SendString("dddssszsds")
+	apiGroup1.Get("/friends", func(ctx *fiber.Ctx) error {
+		return ctx.SendString("friends")
+	})
+	apiGroup1.Get("/sap", func(ctx *fiber.Ctx) error {
+		return ctx.SendString("SAP")
 	})
 	//go_models_user.CreateFakeGroup[users.User](apiGroup, "users")
 	go_models.CreateFakeGroup[Project](apiGroup, "projects")

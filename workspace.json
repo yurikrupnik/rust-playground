@@ -4,6 +4,7 @@
   "projects": {
     "auth-app": "apps/auth-app",
     "cli_test": "libs/rust/cli-test",
+    "controller1": "apps/controller1",
     "fiber-he": "libs/fiber-he",
     "go-cli-get-kubeconfig": "apps/go/cli-get-kubeconfig",
     "go-fiber-helpers": "libs/go/fiber-helpers",
