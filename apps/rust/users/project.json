@@ -49,7 +49,7 @@
         }
       }
     },
-    "docker": {
+    "docker-rust": {
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {

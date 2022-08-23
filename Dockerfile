@@ -25,7 +25,7 @@ CMD ["nginx", "-g", "daemon off;"]
 #CMD ["haproxy", "start"]
 
 # Done
-FROM alpine AS scratch
+FROM scratch AS scratch
 WORKDIR /
 ARG DIST_PATH
 #RUN test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)
@@ -36,3 +36,13 @@ COPY $DIST_PATH ./app
 EXPOSE ${PORT}
 ENTRYPOINT ["/app"]
 
+FROM alpine AS alpine
+WORKDIR /
+ARG DIST_PATH
+#RUN test -n "$DIST_PATH" || (echo "DIST_PATH  not set" && false)
+ARG ENTRY_NAME=app
+ENV PORT=8080
+EXPOSE ${PORT}
+COPY $DIST_PATH ./app
+EXPOSE ${PORT}
+ENTRYPOINT ["/app"]
