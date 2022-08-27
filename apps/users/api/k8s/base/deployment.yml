@@ -23,7 +23,7 @@ spec:
       containers:
         - name: users-api
           #          image: europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-api:latest
-          image: yurikrupnik/users-api:latest
+          image: yurikrupnik/users-api:717fe19
           imagePullPolicy: IfNotPresent
           #          command: [ "node", "main.js" ]
           #            - node
