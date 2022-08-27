@@ -4,12 +4,12 @@ resources:
   #  - secrets.yaml
   - namespace.yaml
   #  manual jobs from helm to kubectl thro kustomize
-  - ../base/../../k8s/base/kubevela/base
+  # - ../base/../../k8s/base/kubevela/base
   #  - ../base/vault/manifests/vault.yaml
   #  - storage.yaml
-#  - ../base/../../apps/users/client/k8s/base
-#  - ../base/../../apps/users/api/k8s/base
-  #  - ../base/../../apps/infra/my-kube-controller/k8s/base
+  - ../base/../../apps/users/client/k8s/base
+  - ../base/../../apps/users/api/k8s/base
+#  - ../base/../../apps/infra/my-kube-controller/k8s/base
   #  - ../base/../../apps/test/be-test-app/k8s/base
   #  - ../base/../../apps/profile/client/k8s/base
 #  - ../base/../../apps/profile/api/k8s/base

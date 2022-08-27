@@ -43,6 +43,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div class={styles.App}>
         <h1 class="underline font-bold">Welcome users-client</h1>
+        <h2>Coming from rust-playground</h2>
         <Button>mui button</Button>
         <nav>
           <Link href="/about">About</Link>
