@@ -45,27 +45,6 @@ spec:
       host: acmo.io
     - http:
         paths:
-          - path: /argoccd
-            #            pathType: Exact
-            pathType: Prefix
-            #            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: argocd-server
-                port:
-                  number: 8080
-    #          - path: /api/test
-    #            pathType: Exact
-    #            #            pathType: Prefix
-    #            #            pathType: ImplementationSpecific
-    #            backend:
-    #              service:
-    #                name: be-test-app-service
-    #                port:
-    #                  number: 3333
-      host: acmo.io
-    - http:
-        paths:
           - path: /
             #            pathType: ImplementationSpecific
             pathType: Prefix

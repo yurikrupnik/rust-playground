@@ -13,7 +13,7 @@ resources:
   #  - ../base/../../apps/test/be-test-app/k8s/base
   #  - ../base/../../apps/profile/client/k8s/base
 #  - ../base/../../apps/profile/api/k8s/base
-#  - ingress.yaml
+  - ingress.yaml
 
 #namespace: ng-go-playground
 #  - secrets.yml
