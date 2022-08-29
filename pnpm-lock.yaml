@@ -57,7 +57,7 @@ specifiers:
   react-dom: 18.2.0
   react-test-renderer: 18.2.0
   reflect-metadata: ^0.1.13
-  regenerator-runtime: 0.13.7
+  regenerator-runtime: 0.13.9
   rxjs: ^7.0.0
   solid-app-router: ^0.4.2
   solid-jest: ^0.2.0
@@ -85,7 +85,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   reflect-metadata: 0.1.13
-  regenerator-runtime: 0.13.7
+  regenerator-runtime: 0.13.9
   rxjs: 7.5.6
   solid-app-router: 0.4.2_solid-js@1.4.8
   tslib: 2.4.0
@@ -9502,10 +9502,6 @@ packages:
 
   /regenerate/1.4.2:
     resolution: {integrity: sha512-zrceR/XhGYU/d/opr2EKO7aRHUeiBI8qjtfHqADTwZd6Szfy16la6kqD0MIUs5z5hx6AaKa+PixpPrR289+I0A==}
-
-  /regenerator-runtime/0.13.7:
-    resolution: {integrity: sha512-a54FxoJDIr27pgf7IgeQGxmqUNYrcV338lf/6gH456HZ/PhX+5BcwHXG9ajESmwe6WRO0tAzRUrRmNONWgkrew==}
-    dev: false
 
   /regenerator-runtime/0.13.9:
     resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}

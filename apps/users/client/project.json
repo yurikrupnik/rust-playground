@@ -56,7 +56,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
-        "command": "docker buildx build --target nginx --platform linux/amd64,linux/arm64 --build-arg DIST_PATH=dist/apps/users/client . -t yurikrupnik/users-client:$TAG -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-client:$TAG --push"
+        "command": "docker buildx build --target nginx --platform linux/amd64 --build-arg DIST_PATH=dist/apps/users/client . -t yurikrupnik/users-client:$TAG -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-client:$TAG --push"
       }
     }
   }

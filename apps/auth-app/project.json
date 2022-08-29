@@ -72,7 +72,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
-        "command": "docker buildx build --target node --platform linux/amd64,linux/arm64 --build-arg DIST_PATH=dist/apps/auth-app . -t yurikrupnik/auth-app:$TAG -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/auth-app:$TAG --push"
+        "command": "docker buildx build --target node --platform linux/amd64 --build-arg DIST_PATH=dist/apps/auth-app . -t yurikrupnik/auth-app:$TAG -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/auth-app:$TAG --push"
       }
     }
   },

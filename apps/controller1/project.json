@@ -46,7 +46,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
-        "command": "docker buildx build --platform linux/amd64,linux/arm64 . -t yurikrupnik/controller1 --push",
+        "command": "docker buildx build --platform linux/amd64 . -t yurikrupnik/controller1 --push",
         "cwd": "apps/controller1"
       }
     },

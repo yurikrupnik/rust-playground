@@ -53,7 +53,7 @@
       "executor": "@nrwl/workspace:run-commands",
       "outputs": [],
       "options": {
-        "command": "docker buildx build --target scratch --platform linux/amd64,linux/arm64 --build-arg DIST_PATH=target/release/users . -t yurikrupnik/rust-users-api -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/rust-users-api --push"
+        "command": "docker buildx build --target scratch --platform linux/amd64 --build-arg DIST_PATH=target/release/users . -t yurikrupnik/rust-users-api -t europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/rust-users-api --push"
       }
     }
   },
