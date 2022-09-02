@@ -3,7 +3,7 @@ module github.com/yurikrupnik/yuri-operator
 go 1.18
 
 require (
-	github.com/go-logr/logr v1.2.0
+	github.com/go-logr/logr v1.2.3
 	github.com/onsi/ginkgo v1.16.5
 	github.com/onsi/gomega v1.18.1
 	k8s.io/apimachinery v0.24.2
