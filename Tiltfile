@@ -18,7 +18,7 @@ load('ext://uibutton', 'cmd_button', 'location', 'text_input', 'bool_input')
 
 
 cmd_button(name='NX',
-        argv=['sh', '-c','pnpm nx $type --parallel --max-parallel=$cores --all $SKIP_CASHE --target=$TARGET'],
+        argv=['sh', '-c','pnpm nx $type --parallel --max-parallel=$cores $SKIP_CASHE --target=$TARGET'],
         text='NX',
         location=location.NAV,
         requires_confirmation=True,
