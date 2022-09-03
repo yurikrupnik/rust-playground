@@ -40,6 +40,8 @@ jobs:
           version: 7.8.0
           run_install: true
       # - run: pnpm i
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
       - run: pnpm nx affected --target=build --parallel --max-parallel=3 --prod
       - uses: actions/upload-artifact@v3
         with:
@@ -73,6 +75,8 @@ jobs:
         with:
           version: 7.8.0
           run_install: true
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
       - run: pnpm nx affected --target=test --parallel --max-parallel=3
   lint:
     runs-on: ubuntu-latest
