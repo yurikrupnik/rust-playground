@@ -40,7 +40,9 @@ jobs:
           version: 7.8.0
           run_install: true
       # - run: pnpm i
-      - run: pnpm nx affected --target=build --parallel --max-parallel=3 --all --prod
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
+      - run: pnpm nx affected --target=build --parallel --max-parallel=3 --prod
       - uses: actions/upload-artifact@v3
         with:
           name: build-artifacts
@@ -73,7 +75,9 @@ jobs:
         with:
           version: 7.8.0
           run_install: true
-      - run: pnpm nx affected --target=test --parallel --max-parallel=3 --all
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
+      - run: pnpm nx affected --target=test --parallel --max-parallel=3
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -100,7 +104,9 @@ jobs:
           version: 7.8.0
           run_install: true
 #      - run: pnpm install
-      - run: pnpm nx affected --target=lint --parallel --max-parallel=3 --all
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
+      - run: pnpm nx affected --target=lint --parallel --max-parallel=3
 
   e2e:
     runs-on: ubuntu-latest
@@ -126,9 +132,11 @@ jobs:
       - uses: pnpm/action-setup@v2.1.0
         with:
           version: 7.8.0
-#          run_install: true
-      - run: pnpm i
-      - run: pnpm nx affected --target=e2e --parallel --max-parallel=3 --all
+          run_install: true
+#      - run: pnpm i
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
+      - run: pnpm nx affected --target=e2e --parallel --max-parallel=3
   docker:
     runs-on: ubuntu-latest
 #    needs: build
@@ -207,6 +215,8 @@ jobs:
         id: buildx
 #        with:
 #          driver: kubernetes
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
       - name: Docker Buildx builders
         run: docker buildx ls
 #        with:
@@ -247,17 +257,17 @@ jobs:
 #          build-args: DIST_PATH=dist/apps/users/api
 #          push: true
 #          file: Dockerfile
-#      - run: pnpm nx run-many --target=docker-self --parallel --max-parallel=1 --all
+#      - run: pnpm nx run-many --target=docker-self --parallel --max-parallel=1
 #      - run: cat .docker/config.json
       - name: Set outputs
         id: vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: Check outputs
         run: echo ${{ steps.vars.outputs.sha_short }}
-      - run: pnpm nx affected --target=build --parallel --max-parallel=4 --all --prod
+      - run: pnpm nx affected --target=build --parallel --max-parallel=4 --prod
 #      - run: ls -l  target/*
       - name: Build docker images
-        run: pnpm nx affected --target=docker --parallel --max-parallel=1 --all
+        run: pnpm nx affected --target=docker --parallel --max-parallel=1
         env:
           TAG: ${{ steps.vars.outputs.sha_short }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
