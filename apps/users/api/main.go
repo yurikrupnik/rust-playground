@@ -26,15 +26,12 @@ type Project struct {
 
 // @securityDefinitions.basic  BasicAuth
 func main() {
-	//my_lib.MyLib()
 	// Connect to the database
 	if err := go_mongodb.Connect(); err != nil {
 		log.Println("failed to connect")
 		log.Fatal(err)
 	}
-	//if err := go_mongodb.NewDB(); err != nil {
-	//	log.Fatal(err)
-	//}
+
 	app := fiber.New(fiber.Config{
 		ErrorHandler: go_fiber_helpers.DefaultErrorHandler,
 	})
@@ -47,13 +44,13 @@ func main() {
 	apiGroup := app.Group("api")
 	apiGroup1 := app.Group("v1")
 	apiGroup1.Get("/aris", func(ctx *fiber.Ctx) error {
-		return ctx.SendString("Aross")
+		return ctx.SendString("Arosss")
 	})
 	apiGroup1.Get("/friends", func(ctx *fiber.Ctx) error {
 		return ctx.SendString("friends")
 	})
 	apiGroup1.Get("/sap", func(ctx *fiber.Ctx) error {
-		return ctx.SendString("SAsP")
+		return ctx.SendString("Yes")
 	})
 	//go_models_user.CreateFakeGroup[users.User](apiGroup, "users")
 	go_models.CreateFakeGroup[Project](apiGroup, "projects")
