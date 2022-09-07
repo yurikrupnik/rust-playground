@@ -13,7 +13,7 @@ function getUsers() {
   return (
     axios
       // .get<User[]>('http://localhost:8080/api/users')
-      .get('http://0.0.0.0:5001/api/projects')
+      .get('http://localhost:5001/api/projects')
       // .get<User[]>('http://10.96.232.73:8080/api/users')
       .then((r) => r.data)
   );

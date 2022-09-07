@@ -3,14 +3,15 @@ package go_mongodb
 import (
 	"context"
 	"fmt"
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
 	go_myutils "rust-playground/libs/go/myutils"
 	"time"
+
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 // todo remove!!!!
-var mongoUrl string = "mongodb+srv://yurikrupnik:T4eXKj1RBI4VnszC@cluster0.rdmew.mongodb.net/"
+var mongoUrl string = "mongodb+srv://yurikrupnik:T4eXKj1RBI4VnszC@cluster0.rdmew.mongodb.net/?retryWrites=true&w=majority"
 
 // todo add back for env vars
 // var mongoUrl = go_myutils.Getenv("MONGO_URI", "mongodb://localhost/mussia12")
