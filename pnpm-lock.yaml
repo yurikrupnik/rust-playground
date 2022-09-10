@@ -68,7 +68,7 @@ specifiers:
   tsconfig-paths: '3'
   tslib: ^2.3.0
   typescript: ~4.7.2
-  vite: 2.9.14
+  vite: 2.9.15
   vite-plugin-eslint: 1.8.1
   vite-plugin-solid: 2.2.6
   webpack: ^5.74.0
@@ -108,8 +108,8 @@ devDependencies:
   '@nrwl/workspace': 14.5.1_kxl3u5377hpplmpncpxn2z7soa
   '@nx-go/nx-go': 2.6.0
   '@nx-tools/nx-docker': 3.0.3_coujtjsxrrulcx5qrdenklfeey
-  '@nxext/solid': 14.0.2_bhuu7biynwz65wolzqkajrfw6y
-  '@nxext/vite': 14.0.2_wuh52gwppyxmho6r2pjrxd55vi
+  '@nxext/solid': 14.0.2_z6bcrxmf2ubtbmzaicguchovoy
+  '@nxext/vite': 14.0.2_f6tqvhukomahbzzlrc4x5lgsfe
   '@nxrs/cargo': 0.3.3_@nrwl+devkit@14.5.1
   '@testing-library/react': 13.3.0_biqbaboplfbrettd7655fr4n2y
   '@types/jest': 27.5.2
@@ -143,8 +143,8 @@ devDependencies:
   ts-node: 10.9.1_blrqoobwf2eqte46qefu7nm2oe
   tsconfig-paths: 3.14.1
   typescript: 4.7.4
-  vite: 2.9.14
-  vite-plugin-eslint: 1.8.1_eslint@8.23.0+vite@2.9.14
+  vite: 2.9.15
+  vite-plugin-eslint: 1.8.1_eslint@8.23.0+vite@2.9.15
   vite-plugin-solid: 2.2.6
   webpack: 5.74.0
 
@@ -3119,7 +3119,7 @@ packages:
       - encoding
     dev: true
 
-  /@nxext/solid/14.0.2_bhuu7biynwz65wolzqkajrfw6y:
+  /@nxext/solid/14.0.2_z6bcrxmf2ubtbmzaicguchovoy:
     resolution: {integrity: sha512-ao+j8Aoec8KT5dVahKRSZRcp5IN1MVPHqHC9XufXaTkS/lrNOWkvk9sagyeFho6TJ9xmg5GKCqfOczw3ewRZlg==}
     peerDependencies:
       '@nrwl/cypress': ^14.5.0
@@ -3132,7 +3132,7 @@ packages:
       '@nrwl/devkit': 14.5.2_nx@14.5.1
       '@nrwl/linter': 14.5.1_3psvxjt3liempitzqbdf5qxvj4
       '@nrwl/workspace': 14.5.1_kxl3u5377hpplmpncpxn2z7soa
-      '@nxext/vite': 14.0.3_wuh52gwppyxmho6r2pjrxd55vi
+      '@nxext/vite': 14.0.3_f6tqvhukomahbzzlrc4x5lgsfe
       solid-js: 1.4.8
       tsconfig-paths: 3.14.1
     transitivePeerDependencies:
@@ -3140,7 +3140,7 @@ packages:
       - vite
     dev: true
 
-  /@nxext/vite/14.0.2_wuh52gwppyxmho6r2pjrxd55vi:
+  /@nxext/vite/14.0.2_f6tqvhukomahbzzlrc4x5lgsfe:
     resolution: {integrity: sha512-YTUtuvoHPQIRt0WDx5IMTKpWD3HOU+UWR4EuUNbE4J9MGWVY0BS/hS335yfal9H54fsjVmAu9NPGNBOi9sktSQ==}
     peerDependencies:
       '@nrwl/workspace': ^14.0.3
@@ -3152,12 +3152,12 @@ packages:
       rxjs: 7.5.6
       rxjs-for-await: 1.0.0_rxjs@7.5.6
       tsconfig-paths: 3.14.1
-      vite: 2.9.14
+      vite: 2.9.15
     transitivePeerDependencies:
       - nx
     dev: true
 
-  /@nxext/vite/14.0.3_wuh52gwppyxmho6r2pjrxd55vi:
+  /@nxext/vite/14.0.3_f6tqvhukomahbzzlrc4x5lgsfe:
     resolution: {integrity: sha512-gTexrtDTHmD1FjN4wwDMmkSFZvUBjTSaeQ0PuI71ugSc2pCHMc269EVbv/pkUeWqfkvevLIicYi521+H2XOm0A==}
     peerDependencies:
       '@nrwl/workspace': ^14.5.0
@@ -3169,7 +3169,7 @@ packages:
       rxjs: 7.5.6
       rxjs-for-await: 1.0.0_rxjs@7.5.6
       tsconfig-paths: 3.14.1
-      vite: 2.9.14
+      vite: 2.9.15
     transitivePeerDependencies:
       - nx
     dev: true
@@ -10970,7 +10970,7 @@ packages:
       core-util-is: 1.0.2
       extsprintf: 1.3.0
 
-  /vite-plugin-eslint/1.8.1_eslint@8.23.0+vite@2.9.14:
+  /vite-plugin-eslint/1.8.1_eslint@8.23.0+vite@2.9.15:
     resolution: {integrity: sha512-PqdMf3Y2fLO9FsNPmMX+//2BF5SF8nEWspZdgl4kSt7UvHDRHVVfHvxsD7ULYzZrJDGRxR81Nq7TOFgwMnUang==}
     peerDependencies:
       eslint: '>=7'
@@ -10980,7 +10980,7 @@ packages:
       '@types/eslint': 8.4.5
       eslint: 8.23.0
       rollup: 2.77.2
-      vite: 2.9.14
+      vite: 2.9.15
     dev: true
 
   /vite-plugin-solid/2.2.6:
@@ -10992,7 +10992,7 @@ packages:
       merge-anything: 5.0.2
       solid-js: 1.4.8
       solid-refresh: 0.4.1_solid-js@1.4.8
-      vite: 2.9.14
+      vite: 2.9.15
     transitivePeerDependencies:
       - less
       - sass
@@ -11000,8 +11000,8 @@ packages:
       - supports-color
     dev: true
 
-  /vite/2.9.14:
-    resolution: {integrity: sha512-P/UCjSpSMcE54r4mPak55hWAZPlyfS369svib/gpmz8/01L822lMPOJ/RYW6tLCe1RPvMvOsJ17erf55bKp4Hw==}
+  /vite/2.9.15:
+    resolution: {integrity: sha512-fzMt2jK4vQ3yK56te3Kqpkaeq9DkcZfBbzHwYpobasvgYmP2SoAr6Aic05CsB4CzCZbsDv4sujX3pkEGhLabVQ==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
