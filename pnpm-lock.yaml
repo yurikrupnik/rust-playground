@@ -47,7 +47,7 @@ specifiers:
   eslint-plugin-jsx-a11y: 6.6.1
   eslint-plugin-react: 7.31.8
   eslint-plugin-react-hooks: 4.6.0
-  eslint-plugin-solid: 0.7.1
+  eslint-plugin-solid: 0.7.2
   husky: ^8.0.1
   jest: 27.5.1
   next: 12.2.3
@@ -130,7 +130,7 @@ devDependencies:
   eslint-plugin-jsx-a11y: 6.6.1_eslint@8.23.1
   eslint-plugin-react: 7.31.8_eslint@8.23.1
   eslint-plugin-react-hooks: 4.6.0_eslint@8.23.1
-  eslint-plugin-solid: 0.7.1_irgkl5vooow2ydyo6aokmferha
+  eslint-plugin-solid: 0.7.2_irgkl5vooow2ydyo6aokmferha
   husky: 8.0.1
   jest: 27.5.1_ts-node@10.9.1
   nx: 14.5.1
@@ -6277,8 +6277,8 @@ packages:
       semver: 6.3.0
       string.prototype.matchall: 4.0.7
 
-  /eslint-plugin-solid/0.7.1_irgkl5vooow2ydyo6aokmferha:
-    resolution: {integrity: sha512-DNxpdvbUcxOhSEGtT1szPQyaPCDL9aZDxBaV9ljccSis0Z2vLgl+KF2KTZZqjyQlyw+6pqe3Yu4e1fezjWV72w==}
+  /eslint-plugin-solid/0.7.2_irgkl5vooow2ydyo6aokmferha:
+    resolution: {integrity: sha512-80jvjh4YypoN5rr/LjFqGA/Xjc3/6UxncGLRGbdYrQR7Y8xQ3ctRkceHb2enlq++vrkk/6rNRCqii0rEtWn80w==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
