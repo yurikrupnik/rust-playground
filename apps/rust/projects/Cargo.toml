@@ -9,7 +9,7 @@ license = "MIT"
 
 [dependencies]
 colour = "0.6.0"
-actix-web = "4.1.0"
+actix-web = "4.2.1"
 log = "0.4.17"
 mongodb = "2.3.0"
 serde = { version = "1.0.144", features = ["derive"] }
