@@ -53,5 +53,5 @@ jobs:
       - run: go version
       - run: GOOS=linux GOARCH=amd64 yarn build
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2
       - run: yarn ${{ github.event.inputs.command }}
