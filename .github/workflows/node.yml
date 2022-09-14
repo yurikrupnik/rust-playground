@@ -216,7 +216,7 @@ jobs:
           gcloud --quiet auth configure-docker europe-west1-docker.pkg.dev
       - run: docker run --privileged --rm tonistiigi/binfmt --install all
       - run: docker buildx create --use
-      - uses: docker/metadata-action@v3
+      - uses: docker/metadata-action@v4
         id: metadata
         with:
           images: ghcr.io/${{ github.repository }}
