@@ -21,7 +21,7 @@ specifiers:
   '@nrwl/web': 14.7.5
   '@nrwl/workspace': 14.7.5
   '@nx-go/nx-go': 2.6.0
-  '@nx-tools/nx-docker': 3.0.3
+  '@nx-tools/nx-docker': 3.0.4
   '@nxext/solid': 14.0.2
   '@nxext/vite': 14.0.3
   '@nxrs/cargo': 0.3.3
@@ -107,7 +107,7 @@ devDependencies:
   '@nrwl/web': 14.7.5_ooqb2pg6mdibhpwfn2k3sgkgay
   '@nrwl/workspace': 14.7.5_dn5dolt7c344mz2hj6cpsylj3u
   '@nx-go/nx-go': 2.6.0
-  '@nx-tools/nx-docker': 3.0.3_yacvk3l7homx5erk5cujexkezq
+  '@nx-tools/nx-docker': 3.0.4_yacvk3l7homx5erk5cujexkezq
   '@nxext/solid': 14.0.2_o5alquy22qug3ox2c6lm4swyky
   '@nxext/vite': 14.0.3_g674dlw4q4um45zchmjfyujp4y
   '@nxrs/cargo': 0.3.3_@nrwl+devkit@14.7.5
@@ -2939,8 +2939,8 @@ packages:
     dev: true
     optional: true
 
-  /@nx-tools/nx-docker/3.0.3_yacvk3l7homx5erk5cujexkezq:
-    resolution: {integrity: sha512-OoVJgis2216OZ5Co2yeKLD7czlzWTDmZRksaxUS2wjidOx89AOr5EsYRynxAHoELbzNsCW6P+D0bHo+96g+JPQ==}
+  /@nx-tools/nx-docker/3.0.4_yacvk3l7homx5erk5cujexkezq:
+    resolution: {integrity: sha512-nWsIWniaMuXBXFokGjRVfEWlSYjDTTOKzrcuYu/gkhZ1KW7cmDB07HpbCMiQF9HwELNVIhjOyPxeGmg7pzeh+g==}
     engines: {node: '>=14'}
     peerDependencies:
       dotenv: '>=10.0.0'
