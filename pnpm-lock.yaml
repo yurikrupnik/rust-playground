@@ -26,7 +26,7 @@ specifiers:
   '@nxext/vite': 14.0.3
   '@nxrs/cargo': 0.3.3
   '@suid/material': 0.6.2
-  '@testing-library/react': 13.3.0
+  '@testing-library/react': 13.4.0
   '@types/jest': 27.5.2
   '@types/node': 16.11.59
   '@types/react': 18.0.20
@@ -111,7 +111,7 @@ devDependencies:
   '@nxext/solid': 14.0.2_o5alquy22qug3ox2c6lm4swyky
   '@nxext/vite': 14.0.3_g674dlw4q4um45zchmjfyujp4y
   '@nxrs/cargo': 0.3.3_@nrwl+devkit@14.7.5
-  '@testing-library/react': 13.3.0_biqbaboplfbrettd7655fr4n2y
+  '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   '@types/jest': 27.5.2
   '@types/node': 16.11.59
   '@types/react': 18.0.20
@@ -3511,8 +3511,8 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@testing-library/react/13.3.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-DB79aA426+deFgGSjnf5grczDPiL4taK3hFaa+M5q7q20Kcve9eQottOG5kZ74KEr55v0tU2CQormSSDK87zYQ==}
+  /@testing-library/react/13.4.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-sXOGON+WNTh3MLE9rve97ftaZukN3oNf2KjDy7YTx6hcTO2uuLHuCGynMDhFwGw/jYf4OJ2Qk0i4i79qMNNkyw==}
     engines: {node: '>=12'}
     peerDependencies:
       react: ^18.0.0
