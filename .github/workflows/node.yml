@@ -238,12 +238,12 @@ jobs:
       - name: Check outputs
         run: echo ${{ steps.vars.outputs.sha_short }}
       - run: pnpm nx affected --target=build --parallel --max-parallel=4 --prod
-      - name: Build docker images
-        run: pnpm nx affected --target=docker --parallel --max-parallel=1
-        env:
-          TAG: ${{ steps.vars.outputs.sha_short }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NX_VERBOSE_LOGGING: true
+      # - name: Build docker images
+      #   run: pnpm nx affected --target=docker --parallel --max-parallel=1
+      #   env:
+      #     TAG: ${{ steps.vars.outputs.sha_short }}
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     NX_VERBOSE_LOGGING: true
       - name: Build docker images 2
         run: pnpm nx affected --target=dockers --parallel --max-parallel=1
         env:
