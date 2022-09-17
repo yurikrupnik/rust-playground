@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: install-cert-manager
+spec:
+  template:
+    spec:
+      containers:
+      - name: cert-manager
+        image: alpine/helm:3.9.3
+        command: [
+          "helm",
+          "install",
+          "cert-manager",
+          "jetstack/cert-manager",
+          "-namespace cert-manager",
+          "--create-namespace",
+        ]
+      restartPolicy: OnFailure
+  backoffLimit: 4
