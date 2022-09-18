@@ -245,10 +245,10 @@ jobs:
       #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #     NX_VERBOSE_LOGGING: true
       - name: Build docker images 2
-        run: pnpm nx affected --target=dockers --parallel --max-parallel=1
+        run: pnpm nx affected --target=docker --parallel --max-parallel=1
         env:
           TAG: ${{ steps.vars.outputs.sha_short }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NX_VERBOSE_LOGGING: true
   datree:
     runs-on: ubuntu-latest

@@ -28,7 +28,7 @@ type Project struct {
 func main() {
 	// Connect to the database
 	if err := go_mongodb.Connect(); err != nil {
-		log.Println("failed to connect")
+		log.Println("failed tto connect")
 		log.Fatal(err)
 	}
 

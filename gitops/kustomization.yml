@@ -1,0 +1,6 @@
+resources:
+  - argocd
+  - argo-workflows
+
+#namePrefix: demo
+#nameSuffix: yuri

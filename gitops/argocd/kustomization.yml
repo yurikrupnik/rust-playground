@@ -1,0 +1,8 @@
+resources:
+  - namespace.yaml
+  - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+  - ingress.yaml
+#  - install-argo-workflows.yaml
+#namePrefix: demo
+#nameSuffix: yuri
+namespace: argocd
