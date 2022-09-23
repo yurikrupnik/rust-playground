@@ -1,7 +1,9 @@
 resources:
   - namespace.yaml
+#  - job.yaml
   - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-  - ingress.yaml
+#  - app.yaml
+#  - ingress.yaml
 #  - install-argo-workflows.yaml
 #namePrefix: demo
 #nameSuffix: yuri
