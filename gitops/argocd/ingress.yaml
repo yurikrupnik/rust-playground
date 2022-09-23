@@ -1,3 +1,27 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: argocd-server
+  namespace: argocd
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`argocd.example.com`)
+      priority: 10
+      services:
+        - name: argocd-server
+          port: 80
+    - kind: Rule
+      match: Host(`argocd.example.com`) && Headers(`Content-Type`, `application/grpc`)
+      priority: 11
+      services:
+        - name: argocd-server
+          port: 80
+          scheme: h2c
+  tls:
+    certResolver: default
 #apiVersion: argoproj.io/v1alpha1
 #kind: ArgoCD
 #metadata:
@@ -37,29 +61,29 @@
 #  tls:
 #    certResolver: default
 #---
-apiVersion: argoproj.io/v1alpha1
-kind: ApplicationSet
-metadata:
-  name: guestbook
-spec:
-  generators:
-    - list:
-        elements:
-          - cluster: engineering-dev
-            url: https://1.2.3.4
-          - cluster: engineering-prod
-            url: https://2.4.6.8
-          - cluster: finance-preprod
-            url: https://9.8.7.6
-  template:
-    metadata:
-      name: '{{cluster}}-guestbook'
-    spec:
-      project: my-project
-      source:
-        repoURL: https://github.com/infra-team/cluster-deployments.git
-        targetRevision: HEAD
-        path: guestbook/{{cluster}}
-      destination:
-        server: '{{url}}'
-        namespace: guestbook
+#apiVersion: argoproj.io/v1alpha1
+#kind: ApplicationSet
+#metadata:
+#  name: guestbook
+#spec:
+#  generators:
+#    - list:
+#        elements:
+#          - cluster: engineering-dev
+#            url: https://1.2.3.4
+#          - cluster: engineering-prod
+#            url: https://2.4.6.8
+#          - cluster: finance-preprod
+#            url: https://9.8.7.6
+#  template:
+#    metadata:
+#      name: '{{cluster}}-guestbook'
+#    spec:
+#      project: my-project
+#      source:
+#        repoURL: https://github.com/infra-team/cluster-deployments.git
+#        targetRevision: HEAD
+#        path: guestbook/{{cluster}}
+#      destination:
+#        server: '{{url}}'
+#        namespace: guestbook

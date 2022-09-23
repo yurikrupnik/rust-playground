@@ -1,8 +1,13 @@
 resources:
   - namespace.yaml
-  - https://github.com/argoproj/argo-workflows/releases/download/v3.3.9/install.yaml
+#  - https://github.com/argoproj/argo-workflows/releases/download/v3.3.9/install.yaml
+#  - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 #  - hello-world.yaml
   # - install-argo-workflows.yaml
 #namePrefix: demo
 #nameSuffix: yuri
 namespace: argo
+
+
+# examples
+# https://github.com/dewan-ahmed/argocd-applicationset-demo
