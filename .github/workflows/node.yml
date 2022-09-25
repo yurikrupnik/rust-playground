@@ -57,6 +57,7 @@ jobs:
         with:
           bun-version: latest
           github-token: ${{ secrets.GITHUB_TOKEN }}
+      - run: bun i
 #      - name: Use Node.js ${{ matrix.node-version }}
 #        uses: actions/setup-node@v3
 #        with:
