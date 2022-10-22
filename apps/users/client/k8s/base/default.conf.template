@@ -1,6 +1,5 @@
-upstream backend {
+upstream ${UPSTREAM_NAME} {
     server ${UPSTREAM_HOST}:${UPSTREAM_PORT};
-#     server $HOST:8080;
 }
 
 server {
@@ -26,8 +25,8 @@ server {
             try_files $uri $uri/ /index.html =404;
         }
         location /api {
-            proxy_redirect  http://backend/  /api/;
-            proxy_pass http://backend;
+            proxy_redirect  http://${UPSTREAM_NAME}/  /api/;
+            proxy_pass http://${UPSTREAM_NAME};
         }
         #error_page  404              /404.html;
 

@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-
 	"github.com/gofiber/fiber/v2"
+
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/monitor"
@@ -28,7 +28,7 @@ type Project struct {
 func main() {
 	// Connect to the database
 	if err := go_mongodb.Connect(); err != nil {
-		log.Println("failed tto connect")
+		log.Println("failed to connect")
 		log.Fatal(err)
 	}
 
@@ -47,7 +47,7 @@ func main() {
 		return ctx.SendString("Arosss")
 	})
 	apiGroup1.Get("/friends", func(ctx *fiber.Ctx) error {
-		return ctx.SendString("friends")
+		return ctx.SendString("dass")
 	})
 	apiGroup1.Get("/sap", func(ctx *fiber.Ctx) error {
 		return ctx.SendString("Yes")

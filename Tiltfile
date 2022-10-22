@@ -4,15 +4,15 @@
 
 local_resource('pnpm', cmd='pnpm install', deps=['package.json', 'pnpm-lock.yaml'], labels=['pnpm'])
 
-include('./k8s/base/helm/Tiltfile')
+# include('./k8s/base/helm/Tiltfile')
 
-include('./apps/controller1/Tiltfile')
+# include('./apps/controller1/Tiltfile')
 include('./apps/users/api/Tiltfile')
 include('./apps/users/client/Tiltfile')
-include('./apps/auth-app/Tiltfile')
+# include('./apps/auth-app/Tiltfile')
 # include('./apps/infra/commdands/Tiltfile')
 
-k8s_yaml(kustomize('k8s/base'))
+# k8s_yaml(kustomize('k8s/base'))
 
 load('ext://uibutton', 'cmd_button', 'location', 'text_input', 'bool_input')
 

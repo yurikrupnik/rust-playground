@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-claim
+  namespace: default
+#  annotations:
+#    anthos-migrate.gcr.io/vm-id: vm-1
+#    anthos-migrate.gcr.io/vm-data-access-mode: Streaming
+#    anthos-migrate.gcr.io/run-mode: TestClone
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: slow
+  resources:
+    requests:
+      storage: 512M
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deployment
+spec:
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mysql:5.7
+        env:
+          - name: MYSQL_ALLOW_EMPTY_PASSWORD
+            value: "true"
+        volumeMounts:
+          - mountPath: /var/lib/mysql
+            name: mysql-data
+            subPath: mysql
+      volumes:
+        - name: mysql-data
+          persistentVolumeClaim:
+            claimName: mysql-claim
+---

@@ -5,13 +5,16 @@ metadata:
   #  namespace: users
   labels:
     app: users-api
+    version: v1
 spec:
   replicas: 1
+
   template:
     metadata:
       name: users-api
       labels:
         app: users-api
+        version: v1
       annotations:
         "consul.hashicorp.com/connect-inject": "true"
         "consul.hashicorp.com/connect-service": "users-api"
@@ -20,6 +23,7 @@ spec:
         "prometheus.io/scrape": "true"
         "prometheus.io/port": "9102"
     spec:
+      serviceAccountName: users-api
       containers:
         - name: users-api
           #          image: europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-api:latest
@@ -54,3 +58,4 @@ spec:
   selector:
     matchLabels:
       app: users-api
+      version: v1

@@ -1,6 +1,8 @@
 resources:
-  - argocd
-#  - argo-workflows
+  - metallb
+#  - argocd
+  # - cert-manager
+  # - argo-workflows
 
 #namePrefix: demo
 #nameSuffix: yuri
