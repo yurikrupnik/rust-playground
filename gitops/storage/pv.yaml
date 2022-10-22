@@ -1,0 +1,22 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: slow
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-standard
+  fstype: ext4
+  replication-type: none
+reclaimPolicy: Delete
+---
+#kind: PersistentVolumeClaim
+#apiVersion: v1
+#metadata:
+#  name: test-dynamic-volume-claim
+#spec:
+#  storageClassName: "nfs"
+#  accessModes:
+#    - ReadWriteOnce
+#  resources:
+#    requests:
+#      storage: 100Mi

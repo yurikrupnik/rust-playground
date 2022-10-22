@@ -13,6 +13,7 @@ metadata:
   name: users-client
   labels:
     app: users-client
+    version: v1
 spec:
   replicas: 1
   template:
@@ -20,35 +21,47 @@ spec:
       name: users-client
       labels:
         app: users-client
+        version: v1
     spec:
+      serviceAccountName: users-client
       containers:
         - name: users-client
           image: yurikrupnik/users-client:latest
+          ports:
+            - containerPort: 80
+              name: http
           #          image: europe-west1-docker.pkg.dev/maya-mussia/nx-go-playground/users-client:latest
           imagePullPolicy: IfNotPresent
           volumeMounts:
-            - mountPath: /etc/nginx/conf.d
-              name: nginx-configs
+#            - mountPath: /etc/nginx/conf.d
+            - mountPath: /etc/nginx/templates
+              name: nginx-config
           env: # not working only front end
-            - name: VITE_API_HOST
+            - name: UPSTREAM_HOST
               valueFrom:
                 configMapKeyRef:
-                  key: api_gateway_url
-                  name: users-api-url
-            - name: API_PORT
+                  key: upstream_host
+                  name: proxy-envs
+            - name: UPSTREAM_PORT
               valueFrom:
                 configMapKeyRef:
-                  key: port
-                  name: users-api-url
-            - name: VITE_AR
-              value: "aris shit"
+                  key: upstream_port
+                  name: proxy-envs
+            - name: UPSTREAM_NAME
+              valueFrom:
+                configMapKeyRef:
+                  key: upstream_name
+                  name: proxy-envs
       volumes:
+#        - name: nginx-config
+#          configMap:
+#            name: nginx-config
         - name: nginx-config
           configMap:
             name: nginx-config
-        - name: nginx-configs
+        - name: proxy-envs
           configMap:
-            name: nginx-configs
+            name: proxy-envs
       #        - name: haproxy-config
       #          configMap:
       #            name: haproxy-config
@@ -57,3 +70,4 @@ spec:
   selector:
     matchLabels:
       app: users-client
+      version: v1

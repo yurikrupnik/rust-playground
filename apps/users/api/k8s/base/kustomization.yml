@@ -1,6 +1,8 @@
 resources:
+  - service-account.yaml
   - service.yml
   - deployment.yml
+#  - ingress.yaml
 commonLabels:
   demo: profile-api-label
   service: users

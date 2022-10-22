@@ -4,4 +4,5 @@ metadata:
   name: argocd
   labels:
     kubernetes.io/metadata.name: argocd
+    istio-injection: enabled
 

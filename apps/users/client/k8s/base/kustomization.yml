@@ -5,15 +5,16 @@
 #      name: mysql
 #      apiVersion: v1
 resources:
+  - service-account.yaml
   - configMap.yaml
-  - service.yml
   - deployment.yml
+  - service.yml
+  - ingress.yaml
 commonLabels:
   demo: profile-client-label
   service: users
   my-type: client
 #namespace: frontend
-
 #  - servi
 #namePrefix: demo-prefix
 #nameSuffix: client
@@ -22,9 +23,10 @@ commonLabels:
 #    newName: alpine
 #    newTag: 3.6
 configMapGenerator:
-  - name: nginx-configs
+  - name: nginx-config
     files:
-      - nginx.conf
+      - default.conf.template
+#      - nginx.conf
 #  - name: haproxy-config
 #    files:
 #      - haproxy.cfg

@@ -1,14 +1,14 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  #  labels:
-  #    kubernetes.io/metadata.name: aris
-  name: users
----
+#apiVersion: v1
+#kind: Namespace
+#metadata:
+#  #  labels:
+#  #    kubernetes.io/metadata.name: aris
+#  name: users
+#---
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: nginx-config
+  name: nginx-config-copy
 data:
   nginx.conf: |
     server {
@@ -63,7 +63,15 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: haproxy-configdsdsds
+  name: proxy-envs
 data:
-  haproxy.fng: |
-    global
+  upstream_host: users-api-service
+  upstream_port: "8080"
+  upstream_name: backend
+#apiVersion: v1
+#kind: ConfigMap
+#metadata:
+#  name: haproxy-configdsdsds
+#data:
+#  haproxy.fng: |
+#    global

@@ -1,0 +1,134 @@
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: external-secrets
+#  namespace: argocd
+#spec:
+#  project: default
+#  source:
+#    chart: external-secrets/external-secrets
+##    chart: external-secrets
+#    repoURL: https://github.com/external-secrets/external-secrets/tree/main/deploy/charts/external-secrets
+##    repoURL: https://github.com/external-secrets/external-secrets
+#    targetRevision: v0.6.0
+#    helm:
+##      values:
+##        installCRDs: true
+##      parameters:
+##        - name: serviceMonitor.enabled
+##          value: "true"
+#      releaseName: external-secrets
+#  destination:
+#    server: "https://kubernetes.default.svc"
+#    namespace: external-secrets
+#  syncPolicy:
+#    automated:
+#      selfHeal: true
+#      prune: true
+#      allowEmpty: true
+#    syncOptions:
+#      - CreateNamespace=true
+#---
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: cert-manager
+#  namespace: argocd
+#spec:
+#  project: default
+#  source:
+#    chart: jetstack/cert-manager
+##    repoURL: https://github.com/cert-manager/cert-manager/tree/master/deploy/charts/cert-manager
+##    repoURL: https://github.com/cert-manager/cert-manager
+#    repoURL: https://charts.jetstack.io
+#    targetRevision: v1.10.0
+#    helm:
+#      parameters:
+#        - name: installCRDs
+#          value: "true"
+#      releaseName: cert-manager
+#  destination:
+#    server: "https://kubernetes.default.svc"
+#    namespace: cert-manager
+#  syncPolicy:
+#    automated:
+#      selfHeal: true
+#      prune: true
+#      allowEmpty: true
+#    syncOptions:
+#      - CreateNamespace=true
+#---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sealed-secrets-mine
+  namespace: argocd
+#  annotations:
+#    argocd.argoproj.io/sync-wave: "1"
+spec:
+  project: default
+  source:
+    chart: sealed-secrets
+    repoURL: https://bitnami-labs.github.io/sealed-secrets
+    targetRevision: v2.7.0
+    helm:
+      releaseName: sealed-secrets
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: kubeseal
+  syncPolicy:
+    automated:
+      selfHeal: true
+#      prune: true
+#      allowEmpty: true
+    syncOptions:
+      - CreateNamespace=true
+---
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: sealed-secrets
+#  namespace: argocd
+#  annotations:
+#    argocd.argoproj.io/sync-wave: "1"
+#  finalizers:
+#    - resources-finalizer.argocd.argoproj.io
+#spec:
+#  project: default
+#  source:
+#    repoURL: https://bitnami-labs.github.io/sealed-secrets
+#    targetRevision: v2.6.9
+#    chart: sealed-secrets
+#    helm:
+#      parameters:
+#        - name: fullnameOverride
+#          value: sealed-secrets-controller
+#          forceString: true
+#  destination:
+#    server: 'https://kubernetes.default.svc'
+#    namespace: kube-system
+#  syncPolicy:
+#    automated:
+#      selfHeal: true
+#    syncOptions:
+#      - CreateNamespace=true
+#---
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: bootstrap
+#  namespace: argocd
+#spec:
+#  destination:
+#    namespace: argocd
+#    server: https://kubernetes.default.svc
+#  project: default
+#  source:
+#    path: apps
+#    repoURL: https://github.com/Piotr1215/kubernetes-box
+#    targetRevision: HEAD
+#  syncPolicy:
+#    automated:
+#      selfHeal: true
+#    syncOptions:
+#      - CreateNamespace=true
