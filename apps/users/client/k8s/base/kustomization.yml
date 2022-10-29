@@ -9,7 +9,7 @@ resources:
   - configMap.yaml
   - deployment.yml
   - service.yml
-  - ingress.yaml
+#  - ingress.yaml
 commonLabels:
   demo: profile-client-label
   service: users

@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@creativearis/cdk8s-app-swc": ["libs/cdk8s-app-swc/src/index.ts"],
+      "@creativearis/cdk8s-app-tsc": ["libs/cdk8s-app-tsc/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

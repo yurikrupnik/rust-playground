@@ -3,6 +3,8 @@
   "version": 2,
   "projects": {
     "auth-app": "apps/auth-app",
+    "cdk8s-app-swc": "libs/cdk8s-app-swc",
+    "cdk8s-app-tsc": "libs/cdk8s-app-tsc",
     "cli_test": "libs/rust/cli-test",
     "controller1": "apps/controller1",
     "fiber-he": "libs/fiber-he",

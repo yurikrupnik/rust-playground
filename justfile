@@ -47,7 +47,8 @@ destroy-k3d:
   k3d
 # setup kind cluster
 setup-kind:
-  kind create cluster
+  ctlptl create cluster kind --registry=ctlptl-registry
+#  kind create cluster
 # setup argocd
 setup-argocd:
   kustomize build ./gitops/argocd | kubectl create -f -

@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: gcpsm-secret
+  labels:
+    type: gcpsm
+type: Opaque
+stringData:
+  secret-access-credentials: |-
+    {
+    "type": "service_account",
+    "project_id": "maya-mussia",
+    "private_key_id": "c1a4fcac19b178ff0dac18fe1d240fd0432c2b50",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCuKMH8QiNmRiOX\necuilvyP83eRuGyPYysiYKzjcAVEjMk47msIRSwv9nhs/hXtJYDQAR8c46Okp4nz\nNBu0DV5ZUh/yrQCFKFV/0z8zzAGNZcrt09Q/KuMI5U9Sw5GgByte9a8+7bjdURv4\nZfx0fXyN9Ro9gsOWYbZ4L4QokPNUfa3kFagX/9nmNmnVZzy1M1vkk1bxwP7Z1WWy\nmg7sKiVNdmaB9PE/U/0GFURtrl+T3PmNacY18bwMq4VE+EfGWh9TxWeqzkC5me/C\nu6yZHU5Wi+DIqiWd5GH/1Di7HOqEI8CXvYLGJytRZ6IAONg4hbspM5cmAjqFclPH\nEbw2Je8TAgMBAAECggEAM5Auquy8BV5T0FfHojpYyZf4eUTko2lljnaYCXiTnrGe\nLARu3RJ53DN5gS+TN1TIuAz09L0zKJ9P+Rke8KaanhByFAwDoOkJs2BMkJ3ggcg3\nFkYGy7L7aBlYbHUpqvskbKeJ/LQubRxEDz3GyoiStYbxf2+1T9NbTmcnFkmgOY3D\n2zohfXU6RTyRxT4enF4piH0yFhIJe8OiiTq6mZF1dxFUV3Q+B0FOuyEAJtJ7uTzy\ntIzgYT1yyg9g/+CrpCCjJ43dqyxv/ULm0xs804I3jRoPpe1KxEtlQLups+apKCAp\n9Erz2qM/QDsWDUtibW6UADPAjPtZcLdxhbtdLJtNyQKBgQD1Szs/L+fv1TOJfBFg\nLKAaTVzIZmJNZT/rIcmwd87vGlogQUb4py2luJOSYdHVJYoazqgjRiNeaw/rLScs\nnXN+icDN0cLQTB1Obyiygs2F8UOJHmE8Uq7yfk4EWLtACwmReYpaXxHOIEPMytSh\nVcAyYMVPo/KZSNvwv4hV02/rCwKBgQC1wrWuzflZPD3pGvbvqgsj5Y9GhjJIfZY/\nIyp4N6264TOK14a73V1xn+dO34eRQyOeS4DnTBwuO8joWMyUmhqgZAuQbwpGp4on\nAmuMjS86ID8C51oIrhJyH4fZGrCaEdvj0RC22gYbcvU3bCpEAKlSJszux1kXnUwc\nY59KCHzRGQKBgHA8eyB/aA3qLMm0tjKeWKeQTGr5xfMJ6ARLkoCnYU0wbpqho7q0\nrANPAF8TWTLBGX8InhB90EMsk70VDP6yEJ2OpGTInO44VZSE8kcz6Jxn93HvL6it\nYJVeS45bl1pHcppY1YBiTcBWLQ+wozgrB2VFuCKnrqKKnvB6gwRaWbRfAoGBALOw\nWJkF/BqiGbqX88Qf4X+NdMWN6awMrDqi81uB//iepqv+Qq77O2QXZz9scMPFEjNu\nBXOkpL94TziUgTvv1Z73CQ+zFv+epk/Gbri24xedxW2DdljablXwogaaAjluqmpg\nxxteE2eTkKVIA8jStpIG1dbBsWxND2+JdXJlTbARAoGADfv5MTAqR8qyfnAqeeD0\nA3M1m5LVostBfTL/yzb31p1JNVFhBxO9VjB7Kb0r+qjlL9nJKooTx/iw5PE4MDlA\no1FSqbmQjNl9UiXtwHjCUS/LkQp9aWJuUs26PheR5SxVSStkkEt3vUg1DXULHRxM\nS86ClvtVpMw7HqaYBLveqkw=\n-----END PRIVATE KEY-----\n",
+    "client_email": "secret-retriever@maya-mussia.iam.gserviceaccount.com",
+    "client_id": "102937265774275509900",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/secret-retriever%40maya-mussia.iam.gserviceaccount.com"
+    }
+
+---
+apiVersion: external-secrets.io/v1beta1
+kind: SecretStore
+metadata:
+  name: example
+spec:
+  provider:
+    gcpsm:                                  # gcpsm provider
+      auth:
+        secretRef:
+          secretAccessKeySecretRef:
+            name: gcpsm-secret              # secret name containing SA key
+            key: secret-access-credentials  # key name containing SA key
+      projectID: maya-mussia                  # name of Google Cloud project
