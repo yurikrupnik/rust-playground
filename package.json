@@ -28,7 +28,7 @@
     "tslib": "2.4.0"
   },
   "devDependencies": {
-    "@babel/core": "7.19.1",
+    "@babel/core": "7.19.6",
     "@nestjs/schematics": "9.0.3",
     "@nestjs/testing": "9.1.2",
     "@nrwl/cli": "14.8.6",
