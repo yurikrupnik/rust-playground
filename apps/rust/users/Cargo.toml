@@ -8,7 +8,7 @@ edition = "2021"
 [dependencies]
 actix-web = "4.2.1"
 mongodb = "2.3.1"
-serde = "1.0.145"
+serde = "1.0.147"
 log = "0.4.17"
 mongo_connect = { path = "../../../libs/rust/mongo-connect" }
 
