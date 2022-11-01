@@ -25,7 +25,7 @@ specifiers:
   '@nxext/solid': 14.0.2
   '@nxext/vite': 14.0.3
   '@nxrs/cargo': 0.3.3
-  '@suid/material': 0.6.2
+  '@suid/material': 0.6.3
   '@testing-library/react': 13.4.0
   '@types/jest': 27.5.2
   '@types/node': 16.11.60
@@ -78,7 +78,7 @@ dependencies:
   '@nestjs/core': 9.1.2_foclggtudvr6cnfc5hz7ukfode
   '@nestjs/platform-express': 9.1.2_umdjpi6fqr4wvw73r3mhthbyle
   '@nrwl/next': 14.8.6_ofigmz25zajkweo2r75amxpri4
-  '@suid/material': 0.6.2_solid-js@1.5.6
+  '@suid/material': 0.6.3_solid-js@1.5.6
   axios: 0.27.2
   core-js: 3.25.2
   next: 12.3.1_qtpcxnaaarbm4ws7ughq6oxfve
@@ -102,7 +102,7 @@ devDependencies:
   '@nrwl/linter': 14.8.6_7lr27rphnc3n3oaajqpyctarhm
   '@nrwl/nest': 14.8.6_jqrnkvnrq76lci5yy4ahbaotae
   '@nrwl/node': 14.8.6_jqrnkvnrq76lci5yy4ahbaotae
-  '@nrwl/nx-cloud': 15.0.0
+  '@nrwl/nx-cloud': 15.0.1
   '@nrwl/react': 14.8.6_x6c3fvxgg5usbxae3x43iys2qy
   '@nrwl/web': 14.8.6_x6c3fvxgg5usbxae3x43iys2qy
   '@nrwl/workspace': 14.8.6_bunixwbbu6lu52psvglrefetti
@@ -2547,8 +2547,8 @@ packages:
       - webpack-cli
     dev: true
 
-  /@nrwl/nx-cloud/15.0.0:
-    resolution: {integrity: sha512-KAYmbx8M4we9gUn14rDnt5vMz+yYwIa4xJNsByWf7mjzC4lvBVZKqFzFGaklWzp/gJN/xyNleZt/Fg64k/kF+A==}
+  /@nrwl/nx-cloud/15.0.1:
+    resolution: {integrity: sha512-EvUxiXF/t8czg6ORWRZ3bTPfUHH45Z3VMubmnBEWmcB3IOXQu25Du7KmUCEAqjqb1spuWrsWRzSxkIrpz8Xl9g==}
     hasBin: true
     dependencies:
       axios: 0.21.4
@@ -3282,14 +3282,14 @@ packages:
     dependencies:
       '@sinonjs/commons': 1.8.3
 
-  /@suid/base/0.3.1_solid-js@1.5.6:
-    resolution: {integrity: sha512-xg/ExMJtu7/tMnUrMTZhkAPrn/tCIfCfBjcCZuubpTXOHeNF+cnt/ObLnrEen2c3P0GCyrtX+W36T1LKQXninA==}
+  /@suid/base/0.3.2_solid-js@1.5.6:
+    resolution: {integrity: sha512-uRigKjiSRYaDBdLY/raxIrk0qHCgx1Bx34z6cP6HY2RgeZxAz09/z2Ii4nhwyI2xGRTbNRbt7yJcACBU6/4J6w==}
     peerDependencies:
       solid-js: ^1.5.0
     dependencies:
       '@popperjs/core': 2.11.6
       '@suid/css': 0.1.6_solid-js@1.5.6
-      '@suid/system': 0.5.1_solid-js@1.5.6
+      '@suid/system': 0.5.2_solid-js@1.5.6
       '@suid/types': 0.2.0_solid-js@1.5.6
       '@suid/utils': 0.5.0_solid-js@1.5.6
       clsx: 1.2.1
@@ -3304,14 +3304,14 @@ packages:
       - solid-js
     dev: false
 
-  /@suid/material/0.6.2_solid-js@1.5.6:
-    resolution: {integrity: sha512-wHiPBAYHoX339HOtq22/6QXdLrVdqTdv4VMbzGb93+Pj4FZvmxWBhYt0P4n57kaEwavBRaFEQ1hV+iVlL2TRqw==}
+  /@suid/material/0.6.3_solid-js@1.5.6:
+    resolution: {integrity: sha512-02TxLOA6xmfx3Cunp/F/cqaQIKh295LZX9OFDvG/nNy6gUqBj9FX7Z+A89VKIyeASMLl1UQ1gPsUo4CrEpYGHA==}
     peerDependencies:
       solid-js: ^1.5.0
     dependencies:
-      '@suid/base': 0.3.1_solid-js@1.5.6
+      '@suid/base': 0.3.2_solid-js@1.5.6
       '@suid/css': 0.1.6_solid-js@1.5.6
-      '@suid/system': 0.5.1_solid-js@1.5.6
+      '@suid/system': 0.5.2_solid-js@1.5.6
       '@suid/types': 0.2.0_solid-js@1.5.6
       '@suid/utils': 0.5.0_solid-js@1.5.6
       clsx: 1.2.1
@@ -3328,8 +3328,8 @@ packages:
       solid-js: 1.5.6
     dev: false
 
-  /@suid/system/0.5.1_solid-js@1.5.6:
-    resolution: {integrity: sha512-SYwOwR4lb/g2Uo6eXN9bv1nhSRbv5RViOee+X3BH7V0cozppYJW+g8hnWTiTiyVm01oa810NjZxDXM26aNFNPA==}
+  /@suid/system/0.5.2_solid-js@1.5.6:
+    resolution: {integrity: sha512-P5O37mh/NfIOh1j+Zy5JVHFc9hvwl1QUzJEEY7Diwce5H517cLRbfAeS58VY3E5mVLlRZqtT6SM/lCQm7ijGWA==}
     peerDependencies:
       solid-js: ^1.5.0
     dependencies:
@@ -3338,7 +3338,7 @@ packages:
       '@suid/types': 0.2.0_solid-js@1.5.6
       '@suid/utils': 0.5.0_solid-js@1.5.6
       clsx: 1.2.1
-      csstype: 3.1.0
+      csstype: 3.1.1
       solid-js: 1.5.6
     dev: false
 
@@ -5319,6 +5319,10 @@ packages:
 
   /csstype/3.1.0:
     resolution: {integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==}
+
+  /csstype/3.1.1:
+    resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
+    dev: false
 
   /csv-parse/4.16.3:
     resolution: {integrity: sha512-cO1I/zmz4w2dcKHVvpCr7JVRu8/FymG5OEpmvsZYlccYolPBLoVGKUHgNoc4ZGkFeFlWGEDmMyBM+TTqRdW/wg==}
