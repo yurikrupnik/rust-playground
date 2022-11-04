@@ -21,7 +21,7 @@ specifiers:
   '@nrwl/web': 14.8.6
   '@nrwl/workspace': 14.8.6
   '@nx-go/nx-go': 2.6.0
-  '@nx-tools/nx-docker': 3.0.4
+  '@nx-tools/nx-docker': 3.0.8
   '@nxext/solid': 14.0.2
   '@nxext/vite': 14.0.3
   '@nxrs/cargo': 0.3.3
@@ -107,7 +107,7 @@ devDependencies:
   '@nrwl/web': 14.8.6_x6c3fvxgg5usbxae3x43iys2qy
   '@nrwl/workspace': 14.8.6_bunixwbbu6lu52psvglrefetti
   '@nx-go/nx-go': 2.6.0
-  '@nx-tools/nx-docker': 3.0.4_figjs5oevl3ysflcqg3qcdwfue
+  '@nx-tools/nx-docker': 3.0.8_figjs5oevl3ysflcqg3qcdwfue
   '@nxext/solid': 14.0.2_ycdnnoswehaojhh5mnegqyoaj4
   '@nxext/vite': 14.0.3_cv4grtxzw7dzw53drpnqeolpxe
   '@nxrs/cargo': 0.3.3_@nrwl+devkit@14.8.6
@@ -2913,14 +2913,14 @@ packages:
       fs-extra: 9.1.0
     dev: true
 
-  /@nx-tools/ci-context/3.0.1_2bx43nitdipu5bppl5pamuix5e:
-    resolution: {integrity: sha512-GyjPijR1UwnnFfBDSdYJBhjMk27LL/KrXr2nHXzw+u1hfzt0wjtHp1QXQqyxi+D6fkeM69j5JqpUFGVEVUiRzQ==}
+  /@nx-tools/ci-context/3.0.8_2bx43nitdipu5bppl5pamuix5e:
+    resolution: {integrity: sha512-np5fUUxdc8qBCDDZqOciO5Ey3dm58OyLfIeQ46+uUBqNYb4p52rVcwVnYtjH4yloV8Ki8rvfuRL7P6KMdh10Ig==}
     engines: {node: '>=14'}
     peerDependencies:
       tslib: ^2.1.0
     dependencies:
       '@actions/github': 5.0.3
-      '@nx-tools/core': 3.0.1_@nrwl+devkit@14.8.6
+      '@nx-tools/core': 3.0.8_@nrwl+devkit@14.8.6
       '@swc/helpers': 0.4.11
       ci-info: 3.3.2
       tslib: 2.4.0
@@ -2930,11 +2930,11 @@ packages:
     dev: true
     optional: true
 
-  /@nx-tools/core/3.0.1_@nrwl+devkit@14.8.6:
-    resolution: {integrity: sha512-eFDmVSMZtqQCwCkkU49ZfbUewy8VCWfylp9GgCfbtMfbHDRCkgZXoX+iDrMH1rgQhSdv7KW83W2kT3XeFFj2fg==}
+  /@nx-tools/core/3.0.8_@nrwl+devkit@14.8.6:
+    resolution: {integrity: sha512-P4pgPx1sF4CYJJICGf/dSBJ5VnDvfrH1kPAZs4wvPbECFdHj0EVsVN3fdibh3kmXJz4ZAsyJqPUc4ZmsjVbLZw==}
     engines: {node: '>=14'}
     peerDependencies:
-      '@nrwl/devkit': ^12.0.0 || ^13.0.0 || ^14.0.0
+      '@nrwl/devkit': ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
     dependencies:
       '@actions/exec': 1.1.1
       '@nrwl/devkit': 14.8.6_nx@14.8.6+typescript@4.8.3
@@ -2942,17 +2942,17 @@ packages:
       colorette: 2.0.19
     dev: true
 
-  /@nx-tools/docker-metadata/3.0.1_2bx43nitdipu5bppl5pamuix5e:
-    resolution: {integrity: sha512-wzFrLuvfYbpBOz7bIvjQF+vDsFM2CHDMUyp5ueXptRpqq0+69jW3wkohpJsNRO67j1baqM1EhUgl7ETY19fhnQ==}
+  /@nx-tools/docker-metadata/3.0.8_2bx43nitdipu5bppl5pamuix5e:
+    resolution: {integrity: sha512-gCiEqjnC4cLBSx5hwbDZGiJ9c4i0sKmbUQZPLOcXKFQG/FByWsgbTL8XOsEkSJWD/N94tDQwKUYI0NEe4Y10BQ==}
     engines: {node: '>=14'}
     requiresBuild: true
     peerDependencies:
-      '@nrwl/devkit': ^12.0.0 || ^13.0.0 || ^14.0.0
+      '@nrwl/devkit': ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
       tslib: ^2.1.0
     dependencies:
       '@nrwl/devkit': 14.8.6_nx@14.8.6+typescript@4.8.3
-      '@nx-tools/ci-context': 3.0.1_2bx43nitdipu5bppl5pamuix5e
-      '@nx-tools/core': 3.0.1_@nrwl+devkit@14.8.6
+      '@nx-tools/ci-context': 3.0.8_2bx43nitdipu5bppl5pamuix5e
+      '@nx-tools/core': 3.0.8_@nrwl+devkit@14.8.6
       '@renovate/pep440': 1.0.0
       '@swc/helpers': 0.4.11
       csv-parse: 4.16.3
@@ -2965,14 +2965,14 @@ packages:
     dev: true
     optional: true
 
-  /@nx-tools/nx-docker/3.0.4_figjs5oevl3ysflcqg3qcdwfue:
-    resolution: {integrity: sha512-nWsIWniaMuXBXFokGjRVfEWlSYjDTTOKzrcuYu/gkhZ1KW7cmDB07HpbCMiQF9HwELNVIhjOyPxeGmg7pzeh+g==}
+  /@nx-tools/nx-docker/3.0.8_figjs5oevl3ysflcqg3qcdwfue:
+    resolution: {integrity: sha512-05TDmZ+4fOwIlGPTlyKq7mEu76UTZ2Sq2fSiw1Qyr2+b95ZJcDoelpriRdWzeJUTuvTQjuZ7jva+og2XJzmzlg==}
     engines: {node: '>=14'}
     peerDependencies:
       dotenv: '>=10.0.0'
       tslib: ^2.1.0
     dependencies:
-      '@nx-tools/core': 3.0.1_@nrwl+devkit@14.8.6
+      '@nx-tools/core': 3.0.8_@nrwl+devkit@14.8.6
       '@swc/helpers': 0.4.11
       csv-parse: 4.16.3
       dotenv: 16.0.2
@@ -2980,7 +2980,7 @@ packages:
       tmp: 0.2.1
       tslib: 2.4.0
     optionalDependencies:
-      '@nx-tools/docker-metadata': 3.0.1_2bx43nitdipu5bppl5pamuix5e
+      '@nx-tools/docker-metadata': 3.0.8_2bx43nitdipu5bppl5pamuix5e
     transitivePeerDependencies:
       - '@nrwl/devkit'
       - encoding
