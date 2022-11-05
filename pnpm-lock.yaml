@@ -38,7 +38,7 @@ specifiers:
   babel-preset-solid: 1.5.6
   core-js: 3.25.2
   cypress: 10.8.0
-  dotenv: 16.0.2
+  dotenv: 16.0.3
   eslint: 8.24.0
   eslint-config-next: 12.3.1
   eslint-config-prettier: 8.5.0
@@ -107,7 +107,7 @@ devDependencies:
   '@nrwl/web': 14.8.6_x6c3fvxgg5usbxae3x43iys2qy
   '@nrwl/workspace': 14.8.6_bunixwbbu6lu52psvglrefetti
   '@nx-go/nx-go': 2.6.0
-  '@nx-tools/nx-docker': 3.0.8_figjs5oevl3ysflcqg3qcdwfue
+  '@nx-tools/nx-docker': 3.0.8_wadktlk5d23wdtzxvrtgsxa3ku
   '@nxext/solid': 14.0.2_ycdnnoswehaojhh5mnegqyoaj4
   '@nxext/vite': 14.0.3_cv4grtxzw7dzw53drpnqeolpxe
   '@nxrs/cargo': 0.3.3_@nrwl+devkit@14.8.6
@@ -121,7 +121,7 @@ devDependencies:
   babel-jest: 27.5.1_@babel+core@7.19.6
   babel-preset-solid: 1.5.6_@babel+core@7.19.6
   cypress: 10.8.0
-  dotenv: 16.0.2
+  dotenv: 16.0.3
   eslint: 8.24.0
   eslint-config-next: 12.3.1_7ilbxdl5iguzcjriqqcg2m5cku
   eslint-config-prettier: 8.5.0_eslint@8.24.0
@@ -2965,7 +2965,7 @@ packages:
     dev: true
     optional: true
 
-  /@nx-tools/nx-docker/3.0.8_figjs5oevl3ysflcqg3qcdwfue:
+  /@nx-tools/nx-docker/3.0.8_wadktlk5d23wdtzxvrtgsxa3ku:
     resolution: {integrity: sha512-05TDmZ+4fOwIlGPTlyKq7mEu76UTZ2Sq2fSiw1Qyr2+b95ZJcDoelpriRdWzeJUTuvTQjuZ7jva+og2XJzmzlg==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -2975,7 +2975,7 @@ packages:
       '@nx-tools/core': 3.0.8_@nrwl+devkit@14.8.6
       '@swc/helpers': 0.4.11
       csv-parse: 4.16.3
-      dotenv: 16.0.2
+      dotenv: 16.0.3
       semver: 7.3.7
       tmp: 0.2.1
       tslib: 2.4.0
@@ -5628,8 +5628,8 @@ packages:
     resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
     engines: {node: '>=10'}
 
-  /dotenv/16.0.2:
-    resolution: {integrity: sha512-JvpYKUmzQhYoIFgK2MOnF3bciIZoItIIoryihy0rIA+H4Jy0FmgyKYAHCTN98P5ybGSJcIFbh6QKeJdtZd1qhA==}
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
     engines: {node: '>=12'}
     dev: true
 
