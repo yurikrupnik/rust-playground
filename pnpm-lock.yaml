@@ -29,7 +29,7 @@ specifiers:
   '@testing-library/react': 13.4.0
   '@types/jest': 27.5.2
   '@types/node': 16.11.60
-  '@types/react': 18.0.24
+  '@types/react': 18.0.25
   '@types/react-dom': 18.0.6
   '@typescript-eslint/eslint-plugin': 5.38.0
   '@typescript-eslint/parser': 5.38.0
@@ -102,7 +102,7 @@ devDependencies:
   '@nrwl/linter': 14.8.6_7lr27rphnc3n3oaajqpyctarhm
   '@nrwl/nest': 14.8.6_jqrnkvnrq76lci5yy4ahbaotae
   '@nrwl/node': 14.8.6_jqrnkvnrq76lci5yy4ahbaotae
-  '@nrwl/nx-cloud': 15.0.1
+  '@nrwl/nx-cloud': 15.0.2
   '@nrwl/react': 14.8.6_x6c3fvxgg5usbxae3x43iys2qy
   '@nrwl/web': 14.8.6_x6c3fvxgg5usbxae3x43iys2qy
   '@nrwl/workspace': 14.8.6_bunixwbbu6lu52psvglrefetti
@@ -114,7 +114,7 @@ devDependencies:
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   '@types/jest': 27.5.2
   '@types/node': 16.11.60
-  '@types/react': 18.0.24
+  '@types/react': 18.0.25
   '@types/react-dom': 18.0.6
   '@typescript-eslint/eslint-plugin': 5.38.0_4gkcvl6qsi23tqqawfqgcwtp54
   '@typescript-eslint/parser': 5.38.0_7ilbxdl5iguzcjriqqcg2m5cku
@@ -2565,8 +2565,8 @@ packages:
       - webpack-cli
     dev: true
 
-  /@nrwl/nx-cloud/15.0.1:
-    resolution: {integrity: sha512-EvUxiXF/t8czg6ORWRZ3bTPfUHH45Z3VMubmnBEWmcB3IOXQu25Du7KmUCEAqjqb1spuWrsWRzSxkIrpz8Xl9g==}
+  /@nrwl/nx-cloud/15.0.2:
+    resolution: {integrity: sha512-DaTASuXmGyQHMxJuK6y3f7fs+Q0qQCfYDIDVGK9muNwN/QItLeWdRNltLQxbrBeS112kQTu2FPsr0DmRD60+0A==}
     hasBin: true
     dependencies:
       axios: 0.21.4
@@ -3744,15 +3744,15 @@ packages:
   /@types/react-dom/18.0.6:
     resolution: {integrity: sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA==}
     dependencies:
-      '@types/react': 18.0.24
+      '@types/react': 18.0.25
     dev: true
 
-  /@types/react/18.0.24:
-    resolution: {integrity: sha512-wRJWT6ouziGUy+9uX0aW4YOJxAY0bG6/AOk5AW5QSvZqI7dk6VBIbXvcVgIw/W5Jrl24f77df98GEKTJGOLx7Q==}
+  /@types/react/18.0.25:
+    resolution: {integrity: sha512-xD6c0KDT4m7n9uD4ZHi02lzskaiqcBxf4zi+tXZY98a04wvc0hi/TcCPC2FOESZi51Nd7tlUeOJY8RofL799/g==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
-      csstype: 3.1.0
+      csstype: 3.1.1
     dev: true
 
   /@types/resolve/1.17.1:
@@ -5340,7 +5340,6 @@ packages:
 
   /csstype/3.1.1:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
-    dev: false
 
   /csv-parse/4.16.3:
     resolution: {integrity: sha512-cO1I/zmz4w2dcKHVvpCr7JVRu8/FymG5OEpmvsZYlccYolPBLoVGKUHgNoc4ZGkFeFlWGEDmMyBM+TTqRdW/wg==}
