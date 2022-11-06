@@ -58,7 +58,7 @@ specifiers:
   react-test-renderer: 18.2.0
   reflect-metadata: 0.1.13
   regenerator-runtime: 0.13.10
-  rxjs: 7.5.6
+  rxjs: 7.5.7
   solid-app-router: 0.4.2
   solid-jest: 0.2.0
   solid-js: 1.5.6
@@ -74,8 +74,8 @@ specifiers:
   webpack: 5.74.0
 
 dependencies:
-  '@nestjs/common': 9.1.2_j5hagqx4mwzscud4kyjdvubauy
-  '@nestjs/core': 9.1.2_foclggtudvr6cnfc5hz7ukfode
+  '@nestjs/common': 9.1.2_yzt46al3aifnexifjjdb4dxxja
+  '@nestjs/core': 9.1.2_zzb753o6ov5n3wrhompfrkwa7u
   '@nestjs/platform-express': 9.1.2_umdjpi6fqr4wvw73r3mhthbyle
   '@nrwl/next': 14.8.6_ofigmz25zajkweo2r75amxpri4
   '@suid/material': 0.6.3_solid-js@1.5.6
@@ -86,7 +86,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   reflect-metadata: 0.1.13
   regenerator-runtime: 0.13.10
-  rxjs: 7.5.6
+  rxjs: 7.5.7
   solid-app-router: 0.4.2_solid-js@1.5.6
   tslib: 2.4.0
 
@@ -1980,7 +1980,7 @@ packages:
   /@leichtgewicht/ip-codec/2.0.4:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
 
-  /@nestjs/common/9.1.2_j5hagqx4mwzscud4kyjdvubauy:
+  /@nestjs/common/9.1.2_yzt46al3aifnexifjjdb4dxxja:
     resolution: {integrity: sha512-zpF4DaLvvsCVqfrf9LJfSeYP+SBCWCFbOCTOmEZ5Gs6Hralia6s2kS+CSicJKx8IpnyC6ZReuqdTbjcPl4yunA==}
     peerDependencies:
       cache-manager: '*'
@@ -1998,11 +1998,11 @@ packages:
     dependencies:
       iterare: 1.2.1
       reflect-metadata: 0.1.13
-      rxjs: 7.5.6
+      rxjs: 7.5.7
       tslib: 2.4.0
       uuid: 9.0.0
 
-  /@nestjs/core/9.1.2_foclggtudvr6cnfc5hz7ukfode:
+  /@nestjs/core/9.1.2_zzb753o6ov5n3wrhompfrkwa7u:
     resolution: {integrity: sha512-wrb/U8PN50K9wEHOLifR9bFKDH8+Dr37rXBB5J+9v3tSWEHkT4o2OiJ8qFmfX5B9GwGE/YRKaJqxw/ScvYvPFw==}
     requiresBuild: true
     peerDependencies:
@@ -2020,7 +2020,7 @@ packages:
       '@nestjs/websockets':
         optional: true
     dependencies:
-      '@nestjs/common': 9.1.2_j5hagqx4mwzscud4kyjdvubauy
+      '@nestjs/common': 9.1.2_yzt46al3aifnexifjjdb4dxxja
       '@nestjs/platform-express': 9.1.2_umdjpi6fqr4wvw73r3mhthbyle
       '@nuxtjs/opencollective': 0.3.2
       fast-safe-stringify: 2.1.1
@@ -2028,7 +2028,7 @@ packages:
       object-hash: 3.0.0
       path-to-regexp: 3.2.0
       reflect-metadata: 0.1.13
-      rxjs: 7.5.6
+      rxjs: 7.5.7
       tslib: 2.4.0
       uuid: 9.0.0
     transitivePeerDependencies:
@@ -2040,8 +2040,8 @@ packages:
       '@nestjs/common': ^9.0.0
       '@nestjs/core': ^9.0.0
     dependencies:
-      '@nestjs/common': 9.1.2_j5hagqx4mwzscud4kyjdvubauy
-      '@nestjs/core': 9.1.2_foclggtudvr6cnfc5hz7ukfode
+      '@nestjs/common': 9.1.2_yzt46al3aifnexifjjdb4dxxja
+      '@nestjs/core': 9.1.2_zzb753o6ov5n3wrhompfrkwa7u
       body-parser: 1.20.0
       cors: 2.8.5
       express: 4.18.1
@@ -2078,8 +2078,8 @@ packages:
       '@nestjs/platform-express':
         optional: true
     dependencies:
-      '@nestjs/common': 9.1.2_j5hagqx4mwzscud4kyjdvubauy
-      '@nestjs/core': 9.1.2_foclggtudvr6cnfc5hz7ukfode
+      '@nestjs/common': 9.1.2_yzt46al3aifnexifjjdb4dxxja
+      '@nestjs/core': 9.1.2_zzb753o6ov5n3wrhompfrkwa7u
       '@nestjs/platform-express': 9.1.2_umdjpi6fqr4wvw73r3mhthbyle
       tslib: 2.4.0
     dev: true
@@ -3016,8 +3016,8 @@ packages:
       '@nrwl/devkit': 14.5.0_nx@14.8.6
       '@nrwl/workspace': 14.8.6_bunixwbbu6lu52psvglrefetti
       globrex: 0.1.2
-      rxjs: 7.5.6
-      rxjs-for-await: 1.0.0_rxjs@7.5.6
+      rxjs: 7.5.7
+      rxjs-for-await: 1.0.0_rxjs@7.5.7
       tsconfig-paths: 3.14.1
       vite: 3.2.2
     transitivePeerDependencies:
@@ -8860,7 +8860,7 @@ packages:
       log-update: 4.0.0
       p-map: 4.0.0
       rfdc: 1.3.0
-      rxjs: 7.5.6
+      rxjs: 7.5.7
       through: 2.3.8
       wrap-ansi: 7.0.0
 
@@ -10487,12 +10487,12 @@ packages:
     dependencies:
       queue-microtask: 1.2.3
 
-  /rxjs-for-await/1.0.0_rxjs@7.5.6:
+  /rxjs-for-await/1.0.0_rxjs@7.5.7:
     resolution: {integrity: sha512-MJhvf1vtQaljd5wlzsasvOjcohVogzkHkUI0gFE9nGhZ15/fT2vR1CjkLEh37oRqWwpv11vHo5D+sLM+Aw9Y8g==}
     peerDependencies:
       rxjs: ^7.0.0
     dependencies:
-      rxjs: 7.5.6
+      rxjs: 7.5.7
     dev: true
 
   /rxjs/6.6.7:
@@ -10501,8 +10501,8 @@ packages:
     dependencies:
       tslib: 1.14.1
 
-  /rxjs/7.5.6:
-    resolution: {integrity: sha512-dnyv2/YsXhnm461G+R/Pe5bWP41Nm6LBXEYWI6eiFP4fiwx6WRI/CD0zbdVAudd9xwLEF2IDcKXLHit0FYjUzw==}
+  /rxjs/7.5.7:
+    resolution: {integrity: sha512-z9MzKh/UcOqB3i20H6rtrlaE/CgjLOvheWK/9ILrbhROGTweAi1BaFsTT9FbwZi5Trr1qNRs+MXkhmR06awzQA==}
     dependencies:
       tslib: 2.4.0
 
