@@ -48,7 +48,7 @@ specifiers:
   eslint-plugin-react: 7.31.8
   eslint-plugin-react-hooks: 4.6.0
   eslint-plugin-solid: 0.7.3
-  husky: 8.0.1
+  husky: 8.0.2
   jest: 27.5.1
   next: 12.3.1
   nx: 14.8.6
@@ -131,7 +131,7 @@ devDependencies:
   eslint-plugin-react: 7.31.8_eslint@8.24.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.24.0
   eslint-plugin-solid: 0.7.3_ypn2ylkkyfa5i233caldtndbqa
-  husky: 8.0.1
+  husky: 8.0.2
   jest: 27.5.1_ts-node@10.9.1
   nx: 14.8.6
   prettier: 2.7.1
@@ -7391,8 +7391,8 @@ packages:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
 
-  /husky/8.0.1:
-    resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
+  /husky/8.0.2:
+    resolution: {integrity: sha512-Tkv80jtvbnkK3mYWxPZePGFpQ/tT3HNSs/sasF9P2YfkMezDl3ON37YN6jUUI4eTg5LcyVynlb6r4eyvOmspvg==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
