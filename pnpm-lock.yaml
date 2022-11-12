@@ -20,7 +20,7 @@ specifiers:
   '@nrwl/react': 14.8.6
   '@nrwl/web': 14.8.6
   '@nrwl/workspace': 14.8.6
-  '@nx-go/nx-go': 2.6.0
+  '@nx-go/nx-go': 2.7.0
   '@nx-tools/nx-docker': 3.0.8
   '@nxext/solid': 14.0.2
   '@nxext/vite': 14.0.3
@@ -106,7 +106,7 @@ devDependencies:
   '@nrwl/react': 14.8.6_2sbdzvorth2y2kxwyrn3ef757y
   '@nrwl/web': 14.8.6_2sbdzvorth2y2kxwyrn3ef757y
   '@nrwl/workspace': 14.8.6_rtbmanvxnfoeqbrj4fgzpq7o4y
-  '@nx-go/nx-go': 2.6.0
+  '@nx-go/nx-go': 2.7.0
   '@nx-tools/nx-docker': 3.0.8_c4kpjnergfvuscye4nvssj5gbu
   '@nxext/solid': 14.0.2_o2gzmnz6sjidrizj5coan2hfau
   '@nxext/vite': 14.0.3_3i6tbfhbeuy5f253tyo54ipkhy
@@ -2907,8 +2907,8 @@ packages:
     transitivePeerDependencies:
       - encoding
 
-  /@nx-go/nx-go/2.6.0:
-    resolution: {integrity: sha512-OR95hzhp1jpV6zoMxFObTEuE0hPX3vhG+i+WXhB4zs7f3givoot146ELtaT5n+OV/HaqmB8kJlITbYrWHZSObQ==}
+  /@nx-go/nx-go/2.7.0:
+    resolution: {integrity: sha512-TtesqhhHKG8uIagqHpxNlNN0MLlT0klGY8rWl83CZ1UIaEmL/2GWZMW8aHh1e0uRxBqe1hM6XNECJFADmknGTQ==}
     dependencies:
       fs-extra: 9.1.0
     dev: true
