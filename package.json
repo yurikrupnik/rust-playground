@@ -44,7 +44,7 @@
     "@nrwl/react": "14.8.6",
     "@nrwl/web": "14.8.6",
     "@nrwl/workspace": "14.8.6",
-    "@nx-go/nx-go": "2.6.0",
+    "@nx-go/nx-go": "2.7.0",
     "@nx-tools/nx-docker": "3.0.8",
     "@nxext/solid": "14.0.2",
     "@nxext/vite": "14.0.3",
