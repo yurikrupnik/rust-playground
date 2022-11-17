@@ -30,7 +30,7 @@ specifiers:
   '@types/jest': 27.5.2
   '@types/node': 16.18.3
   '@types/react': 18.0.25
-  '@types/react-dom': 18.0.8
+  '@types/react-dom': 18.0.9
   '@typescript-eslint/eslint-plugin': 5.38.0
   '@typescript-eslint/parser': 5.38.0
   axios: 0.27.2
@@ -115,7 +115,7 @@ devDependencies:
   '@types/jest': 27.5.2
   '@types/node': 16.18.3
   '@types/react': 18.0.25
-  '@types/react-dom': 18.0.8
+  '@types/react-dom': 18.0.9
   '@typescript-eslint/eslint-plugin': 5.38.0_bxt3cgocwxjo6yiztfypckpcxq
   '@typescript-eslint/parser': 5.38.0_rmayb2veg2btbq6mbmnyivgasy
   babel-jest: 27.5.1_@babel+core@7.20.2
@@ -2942,6 +2942,7 @@ packages:
   /@nx-tools/docker-metadata/3.0.8_cz53yugtcs4ab76zpxaz4etsja:
     resolution: {integrity: sha512-gCiEqjnC4cLBSx5hwbDZGiJ9c4i0sKmbUQZPLOcXKFQG/FByWsgbTL8XOsEkSJWD/N94tDQwKUYI0NEe4Y10BQ==}
     engines: {node: '>=14'}
+    deprecated: '@nx-tools/nx-docker and @nx-tools/docker-metadata are no longer supported... Please migrate to @nx-tools/nx-container and @nx-tools/container-metadata to build OCI containers with Docker, Podman or Kaniko engines.'
     requiresBuild: true
     peerDependencies:
       '@nrwl/devkit': ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0
@@ -3553,7 +3554,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.18.9
       '@testing-library/dom': 8.16.0
-      '@types/react-dom': 18.0.8
+      '@types/react-dom': 18.0.9
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: true
@@ -3738,8 +3739,8 @@ packages:
   /@types/range-parser/1.2.4:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
 
-  /@types/react-dom/18.0.8:
-    resolution: {integrity: sha512-C3GYO0HLaOkk9dDAz3Dl4sbe4AKUGTCfFIZsz3n/82dPNN8Du533HzKatDxeUYWu24wJgMP1xICqkWk1YOLOIw==}
+  /@types/react-dom/18.0.9:
+    resolution: {integrity: sha512-qnVvHxASt/H7i+XG1U1xMiY5t+IHcPGUK7TDMDzom08xa7e86eCeKOiLZezwCKVxJn6NEiiy2ekgX8aQssjIKg==}
     dependencies:
       '@types/react': 18.0.25
     dev: true
