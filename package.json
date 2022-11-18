@@ -47,7 +47,7 @@
     "@nx-go/nx-go": "2.7.0",
     "@nx-tools/nx-docker": "3.0.8",
     "@nxext/solid": "14.0.2",
-    "@nxext/vite": "14.0.3",
+    "@nxext/vite": "14.2.0",
     "@nxrs/cargo": "0.3.3",
     "@testing-library/react": "13.4.0",
     "@types/jest": "27.5.2",
