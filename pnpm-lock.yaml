@@ -23,7 +23,7 @@ specifiers:
   '@nx-go/nx-go': 2.7.0
   '@nx-tools/nx-docker': 3.0.8
   '@nxext/solid': 14.0.2
-  '@nxext/vite': 14.0.3
+  '@nxext/vite': 14.2.0
   '@nxrs/cargo': 0.3.3
   '@suid/material': 0.6.3
   '@testing-library/react': 13.4.0
@@ -108,8 +108,8 @@ devDependencies:
   '@nrwl/workspace': 14.8.6_abwxytztjfji6ehhfxm2upbic4
   '@nx-go/nx-go': 2.7.0
   '@nx-tools/nx-docker': 3.0.8_c4kpjnergfvuscye4nvssj5gbu
-  '@nxext/solid': 14.0.2_i3c74pyvmjj36bstdjld7iydem
-  '@nxext/vite': 14.0.3_ueeoizje6osgqtjwlelkztqreu
+  '@nxext/solid': 14.0.2_xrnqjghz7g2ve2dxudffx7gsr4
+  '@nxext/vite': 14.2.0_23lzhwsqe2v5caomeoeyo26com
   '@nxrs/cargo': 0.3.3_@nrwl+devkit@14.8.6
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   '@types/jest': 27.5.2
@@ -2277,18 +2277,6 @@ packages:
       - vue-template-compiler
       - webpack-cli
 
-  /@nrwl/devkit/14.5.0_nx@14.8.6:
-    resolution: {integrity: sha512-uoZrMar3iy1eryhTW0uSgyA1GPxJLr5vc2+H1h1uEt2Ngb6Vrno+eos9t1Ph0KkEpMT91HXhNSQwI7ql5SR4mg==}
-    peerDependencies:
-      nx: '>= 13.10 <= 15'
-    dependencies:
-      ejs: 3.1.8
-      ignore: 5.2.0
-      nx: 14.8.6
-      semver: 7.3.4
-      tslib: 2.4.1
-    dev: true
-
   /@nrwl/devkit/14.5.2_nx@14.8.6:
     resolution: {integrity: sha512-li94W0D5SQZ7tjMiq+CZLHTx6/Gos5l3lc6jAzW/FHfoiAaaWN2zOPoydBQY7uw5TC+MH1jBbv/49Nf4wmXGVA==}
     peerDependencies:
@@ -2299,6 +2287,20 @@ packages:
       nx: 14.8.6
       semver: 7.3.4
       tslib: 2.4.1
+    dev: true
+
+  /@nrwl/devkit/14.8.5_nx@14.8.6+typescript@4.8.4:
+    resolution: {integrity: sha512-ggB2LcyyNimNTpIdfW4GIk1ITrzWkzhxgJWyPJOoIITsOo6bDlnVT1TKrvSCCgBCx65qP/zZvAI3UsgRtlkZ4Q==}
+    peerDependencies:
+      nx: '>= 13.10 <= 15'
+    dependencies:
+      '@phenomnomnominal/tsquery': 4.1.1_typescript@4.8.4
+      ejs: 3.1.8
+      ignore: 5.2.0
+      nx: 14.8.6
+      tslib: 2.4.1
+    transitivePeerDependencies:
+      - typescript
     dev: true
 
   /@nrwl/devkit/14.8.6_nx@14.8.6+typescript@4.8.4:
@@ -2984,7 +2986,7 @@ packages:
       - encoding
     dev: true
 
-  /@nxext/solid/14.0.2_i3c74pyvmjj36bstdjld7iydem:
+  /@nxext/solid/14.0.2_xrnqjghz7g2ve2dxudffx7gsr4:
     resolution: {integrity: sha512-ao+j8Aoec8KT5dVahKRSZRcp5IN1MVPHqHC9XufXaTkS/lrNOWkvk9sagyeFho6TJ9xmg5GKCqfOczw3ewRZlg==}
     peerDependencies:
       '@nrwl/cypress': ^14.5.0
@@ -2997,21 +2999,22 @@ packages:
       '@nrwl/devkit': 14.5.2_nx@14.8.6
       '@nrwl/linter': 14.8.6_jstmzpfh2tzmxqrutz6oeuvjia
       '@nrwl/workspace': 14.8.6_abwxytztjfji6ehhfxm2upbic4
-      '@nxext/vite': 14.0.3_ueeoizje6osgqtjwlelkztqreu
+      '@nxext/vite': 14.2.0_23lzhwsqe2v5caomeoeyo26com
       solid-js: 1.5.6
       tsconfig-paths: 3.14.1
     transitivePeerDependencies:
       - nx
+      - typescript
       - vite
     dev: true
 
-  /@nxext/vite/14.0.3_ueeoizje6osgqtjwlelkztqreu:
-    resolution: {integrity: sha512-gTexrtDTHmD1FjN4wwDMmkSFZvUBjTSaeQ0PuI71ugSc2pCHMc269EVbv/pkUeWqfkvevLIicYi521+H2XOm0A==}
+  /@nxext/vite/14.2.0_23lzhwsqe2v5caomeoeyo26com:
+    resolution: {integrity: sha512-tbMUk0Bz21TvUOKnLIGO26iZKR0MBcsasRiP027c+HynRA07Mksi5z/iwSnJo10qqw/vrByb4DnJhSsE3674Iw==}
     peerDependencies:
-      '@nrwl/workspace': ^14.5.0
-      vite: ^2.9.14
+      '@nrwl/workspace': ^14.8.5
+      vite: ^3.0.5
     dependencies:
-      '@nrwl/devkit': 14.5.0_nx@14.8.6
+      '@nrwl/devkit': 14.8.5_nx@14.8.6+typescript@4.8.4
       '@nrwl/workspace': 14.8.6_abwxytztjfji6ehhfxm2upbic4
       globrex: 0.1.2
       rxjs: 7.5.7
@@ -3020,6 +3023,7 @@ packages:
       vite: 3.2.4_@types+node@16.18.3
     transitivePeerDependencies:
       - nx
+      - typescript
     dev: true
 
   /@nxrs/cargo/0.3.3_@nrwl+devkit@14.8.6:
