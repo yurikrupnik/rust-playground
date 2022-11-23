@@ -75,7 +75,7 @@
     "prettier": "2.7.1",
     "react-test-renderer": "18.2.0",
     "solid-jest": "0.2.0",
-    "solid-js": "1.5.6",
+    "solid-js": "1.6.2",
     "solid-testing-library": "0.3.0",
     "ts-jest": "27.1.5",
     "ts-node": "10.9.1",
