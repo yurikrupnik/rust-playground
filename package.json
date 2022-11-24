@@ -15,7 +15,7 @@
     "@nestjs/core": "9.1.2",
     "@nestjs/platform-express": "9.1.2",
     "@nrwl/next": "14.8.6",
-    "@suid/material": "0.7.0",
+    "@suid/material": "0.8.0",
     "axios": "0.27.2",
     "core-js": "3.26.1",
     "next": "12.3.4",
