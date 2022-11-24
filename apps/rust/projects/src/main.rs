@@ -29,9 +29,17 @@ trait Api<T> {
 }
 
 #[derive(Debug, Deserialize)]
+pub struct User {
+    id: String,
+    firstname: String,
+    lastname: String,
+}
+
+#[derive(Debug, Deserialize)]
 pub struct Project {
     id: String,
     name: String,
+    friends: Vec<User>,
 }
 
 #[tokio::main]

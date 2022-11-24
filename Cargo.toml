@@ -1,5 +1,12 @@
 [workspace]
 members = [
+    "apps/rust/yew",
+    "apps/rust/warp",
+    "apps/rust/tide",
+    "apps/rust/axum",
+    "apps/rust/rocket",
+    "apps/rust/salvo",
+    "apps/rust/actix",
     "apps/kube-controller",
     "apps/rust/projects",
     "libs/rust/cli-test",

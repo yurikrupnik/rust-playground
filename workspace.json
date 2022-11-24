@@ -2,7 +2,9 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "actix": "apps/rust/actix",
     "auth-app": "apps/auth-app",
+    "axum": "apps/rust/axum",
     "cli_test": "libs/rust/cli-test",
     "controller1": "apps/controller1",
     "fiber-he": "libs/fiber-he",
@@ -15,9 +17,14 @@
     "mongo_connect": "libs/rust/mongo-connect",
     "pokemon-api": "apps/pokemon/api",
     "projects": "apps/rust/projects",
+    "rocket": "apps/rust/rocket",
+    "salvo": "apps/rust/salvo",
+    "tide": "apps/rust/tide",
     "users": "apps/rust/users",
     "users-api": "apps/users/api",
     "users-client": "apps/users/client",
-    "users-client-e2e": "apps/users-client-e2e"
+    "users-client-e2e": "apps/users-client-e2e",
+    "warp": "apps/rust/warp",
+    "yew": "apps/rust/yew"
   }
 }

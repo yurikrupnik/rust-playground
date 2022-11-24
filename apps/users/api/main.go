@@ -54,9 +54,10 @@ func main() {
 	})
 	//go_models_user.CreateFakeGroup[users.User](apiGroup, "users")
 	go_models.CreateFakeGroup[Project](apiGroup, "projects")
+	go_models.CreateFakeGroup[go_models.User](apiGroup, "users")
 
 	app.Get("/dashboard", monitor.New())
-	port := go_myutils.Getenv("PORT", "8080")
+	port := go_myutils.Getenv("PORT", "8081")
 	log.Println("port", port)
 	host := go_myutils.Getenv("HOST", "0.0.0.0")
 	result := fmt.Sprintf("%s:%s", host, port)

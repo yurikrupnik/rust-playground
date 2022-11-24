@@ -8,6 +8,9 @@ argocd_port  := "30950"
 default:
     @just --list --unsorted
 
+nx-build:
+  pnpm nx run-many --target=build --parallel --max-parallel=3
+
 # k3d cluster test - does not work (fails to start ingress) - same with docker kubernetes
 ingress-1:
   k3d cluster create
