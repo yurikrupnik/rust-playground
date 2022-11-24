@@ -25,7 +25,7 @@ specifiers:
   '@nxext/solid': 14.0.2
   '@nxext/vite': 14.2.0
   '@nxrs/cargo': 0.3.3
-  '@suid/material': 0.7.0
+  '@suid/material': 0.8.0
   '@testing-library/react': 13.4.0
   '@types/jest': 27.5.2
   '@types/node': 16.18.3
@@ -78,7 +78,7 @@ dependencies:
   '@nestjs/core': 9.1.2_zzb753o6ov5n3wrhompfrkwa7u
   '@nestjs/platform-express': 9.1.2_umdjpi6fqr4wvw73r3mhthbyle
   '@nrwl/next': 14.8.6_aq7nxxd5qhc75b7n3kslhyf6o4
-  '@suid/material': 0.7.0_solid-js@1.6.2
+  '@suid/material': 0.8.0_solid-js@1.6.2
   axios: 0.27.2
   core-js: 3.26.1
   next: 12.3.4_mqvh5p7ejg4taogoj6tpk3gd5a
@@ -3302,14 +3302,14 @@ packages:
     dependencies:
       '@sinonjs/commons': 1.8.3
 
-  /@suid/base/0.4.0_solid-js@1.6.2:
-    resolution: {integrity: sha512-Kyyls1iO7XGCKhN0zkgPFAD6B/pITY5CNVV9Yd2oPlfl+Quhizb+wQ0sAlqbLJMlid+58+FJvyTI7Il6rsd45Q==}
+  /@suid/base/0.5.0_solid-js@1.6.2:
+    resolution: {integrity: sha512-N7qW1pYu3IA3NhqJqixD5v5w9YA1RmNvmPa+PLmcOLFZ/dnYr6r/ZRL9IrhMpEWllx0iJIlgMgNNXdtHV4H+Rg==}
     peerDependencies:
       solid-js: ^1.6.2
     dependencies:
       '@popperjs/core': 2.11.6
       '@suid/css': 0.1.7_solid-js@1.6.2
-      '@suid/system': 0.6.0_solid-js@1.6.2
+      '@suid/system': 0.7.0_solid-js@1.6.2
       '@suid/types': 0.3.0_solid-js@1.6.2
       '@suid/utils': 0.6.0_solid-js@1.6.2
       clsx: 1.2.1
@@ -3324,14 +3324,14 @@ packages:
       - solid-js
     dev: false
 
-  /@suid/material/0.7.0_solid-js@1.6.2:
-    resolution: {integrity: sha512-/1u/6cFqP+a3AqJslt6z5asWs2bt1769eYW9u9lyzaAUnO8SF76/grzn4KxwNrcEYl4hwZZfjKh2Q1qNUIRA6A==}
+  /@suid/material/0.8.0_solid-js@1.6.2:
+    resolution: {integrity: sha512-eXGv3Qmq3m3huiG1xZ/rZsbnSVCiq/5+pU/tG365a+ehQnFVz2Pm7kT0kYs9lQcISdKo8Atbn+a7BFBidL2RWw==}
     peerDependencies:
       solid-js: ^1.6.2
     dependencies:
-      '@suid/base': 0.4.0_solid-js@1.6.2
+      '@suid/base': 0.5.0_solid-js@1.6.2
       '@suid/css': 0.1.7_solid-js@1.6.2
-      '@suid/system': 0.6.0_solid-js@1.6.2
+      '@suid/system': 0.7.0_solid-js@1.6.2
       '@suid/types': 0.3.0_solid-js@1.6.2
       '@suid/utils': 0.6.0_solid-js@1.6.2
       clsx: 1.2.1
@@ -3348,8 +3348,8 @@ packages:
       solid-js: 1.6.2
     dev: false
 
-  /@suid/system/0.6.0_solid-js@1.6.2:
-    resolution: {integrity: sha512-LvbcHm/UjoTMf2wAOozZ6po2s3Db6EppFCJBF4HjjgSU/obZh957SKfc42uunAWp/z4LhNIBujpK2dinsEPXyA==}
+  /@suid/system/0.7.0_solid-js@1.6.2:
+    resolution: {integrity: sha512-fa7wY3WMiARQYA2ODpCIr5BQ7kuXBciKuKLgQ5wuorKQpwQh9GfEnl9xgRFEb2mpM5Z7Y+PyrKaPygh3o5faWA==}
     peerDependencies:
       solid-js: ^1.6.2
     dependencies:
