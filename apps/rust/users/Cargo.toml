@@ -9,7 +9,7 @@ edition = "2021"
 actix-web = "4.2.1"
 mongodb = "2.3.1"
 serde = "1.0.147"
-log = "0.4.17"
+log = "0.4.21"
 mongo_connect = { path = "../../../libs/rust/mongo-connect" }
 
 tokio = { version = "1.22.0", features = ["macros", "rt-multi-thread"] } # Macros for easy project setup and testing, multi-threaded runtime for best utilization of resources
